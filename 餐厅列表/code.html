@@ -129,7 +129,7 @@
 <!-- TopAppBar Shared Component -->
 <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-md border-b border-stone-100 dark:border-stone-800 shadow-sm shadow-emerald-900/5 transition-opacity duration-300">
 <div class="flex justify-between items-center px-6 h-16 w-full">
-<div class="flex items-center gap-2 hover:opacity-80 cursor-pointer"><button aria-label="Go back" class="mr-1 p-1 -ml-1 rounded-full hover:bg-emerald-50 dark:hover:bg-stone-800 transition-colors duration-200 flex items-center justify-center">
+<div class="flex items-center gap-2 hover:opacity-80 cursor-pointer"><button onclick="history.back()" aria-label="Go back" class="mr-1 p-1 -ml-1 rounded-full hover:bg-emerald-50 dark:hover:bg-stone-800 transition-colors duration-200 flex items-center justify-center">
 <span class="material-symbols-outlined text-emerald-800 dark:text-emerald-400 text-[24px]" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
 </button>
 <span class="material-symbols-outlined text-emerald-800 dark:text-emerald-400" style="font-variation-settings: 'FILL' 0;">spa</span>
@@ -241,7 +241,7 @@
 <!-- BottomNavBar Shared Component -->
 <nav class="fixed bottom-0 w-full z-50 rounded-t-3xl border-t border-stone-100 dark:border-stone-800 bg-white/90 dark:bg-stone-900/90 backdrop-blur-lg shadow-[0_-4px_20px_rgba(74,103,65,0.08)] flex justify-around items-center h-20 pb-safe px-8 md:hidden">
 <!-- Active Tab: 首页 (Home - assuming Restaurant List is part of the primary home exploration) -->
-<a class="flex flex-col items-center justify-center text-emerald-800 dark:text-emerald-300 font-semibold font-serif text-[11px] active:scale-95 transition-transform" href="#">
+<a class="flex flex-col items-center justify-center text-emerald-800 dark:text-emerald-300 font-semibold font-serif text-[11px] active:scale-95 transition-transform" href="../个人中心/code.html">
 <div class="scale-110 transition-all duration-300 ease-out mb-1">
 <span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">home_health</span>
 </div>
