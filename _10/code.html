@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="zh"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>泰康养生小镇 - 订单中心</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Noto+Serif:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Hide scrollbar for clean tab row */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#e3e2e0",
+                        "secondary-fixed": "#f8dfbf",
+                        "on-tertiary-fixed": "#161d17",
+                        "tertiary-fixed": "#dde5da",
+                        "surface-container-low": "#f4f3f1",
+                        "outline-variant": "#c3c8bd",
+                        "surface": "#faf9f6",
+                        "surface-container-highest": "#e3e2e0",
+                        "secondary-fixed-dim": "#dbc3a4",
+                        "on-primary-fixed-variant": "#324e2a",
+                        "on-primary-fixed": "#062104",
+                        "error-container": "#ffdad6",
+                        "outline": "#73796f",
+                        "surface-bright": "#faf9f6",
+                        "primary-fixed-dim": "#afd0a1",
+                        "on-secondary-fixed-variant": "#55442d",
+                        "secondary": "#6e5b43",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#f5dcbc",
+                        "on-secondary-container": "#726046",
+                        "inverse-primary": "#afd0a1",
+                        "on-background": "#1a1c1a",
+                        "on-tertiary-fixed-variant": "#414941",
+                        "on-secondary-fixed": "#261906",
+                        "primary": "#334f2b",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#e9e8e5",
+                        "on-primary-container": "#c2e4b4",
+                        "primary-container": "#4a6741",
+                        "inverse-on-surface": "#f2f1ee",
+                        "on-surface": "#1a1c1a",
+                        "surface-dim": "#dbdad7",
+                        "inverse-surface": "#2f312f",
+                        "on-tertiary-container": "#d5ddd2",
+                        "on-surface-variant": "#434840",
+                        "surface-tint": "#496640",
+                        "primary-fixed": "#caecbc",
+                        "tertiary-container": "#5a625a",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#c1c9be",
+                        "surface-container": "#efeeeb",
+                        "error": "#ba1a1a",
+                        "background": "#faf9f6",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#424a42",
+                        "on-error": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "unit": "4px",
+                        "stack-sm": "8px",
+                        "stack-md": "24px",
+                        "margin-page": "24px",
+                        "stack-lg": "48px",
+                        "gutter": "16px"
+                    },
+                    fontFamily: {
+                        "label-lg": ["Manrope"],
+                        "headline-md": ["Noto Serif"],
+                        "label-md": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "headline-sm": ["Noto Serif"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["Noto Serif"]
+                    },
+                    fontSize: {
+                        "label-lg": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.03em", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md text-body-md antialiased pb-[80px] md:pb-0">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-md border-b border-stone-200/50 dark:border-stone-800/50 shadow-none flex items-center justify-between px-6 h-16 w-full font-serif tracking-tight">
+<button class="material-symbols-outlined text-emerald-900 dark:text-emerald-100 scale-95 duration-200 hover:opacity-80 transition-opacity">arrow_back</button>
+<h1 class="text-lg font-semibold text-emerald-900 dark:text-emerald-100">订单中心</h1>
+<div class="w-6"></div> <!-- Spacer -->
+</header>
+<div class="pt-16 max-w-3xl mx-auto w-full flex flex-col h-full">
+<!-- Top Tab Bar (Derived from NavigationDrawer labels) -->
+<nav class="px-margin-page pt-4 pb-0 overflow-x-auto hide-scrollbar border-b border-surface-variant flex gap-8">
+<button class="whitespace-nowrap pb-3 border-b-2 border-primary text-primary font-label-lg text-label-lg">游玩预约</button>
+<button class="whitespace-nowrap pb-3 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md">酒店</button>
+<button class="whitespace-nowrap pb-3 border-b-2 border-transparent text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md">疗养</button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="p-margin-page flex flex-col gap-stack-md flex-1">
+<!-- Order Card 1: Scheduled -->
+<article class="bg-surface-container-lowest rounded-xl p-5 shadow-[0_10px_30px_rgba(51,79,43,0.03)] border border-surface-variant flex flex-col gap-4">
+<div class="flex justify-between items-center pb-3 border-b border-surface-container-highest">
+<span class="text-label-md font-label-md text-on-surface-variant">订单 #QR882910</span>
+<span class="text-label-md font-label-md text-primary bg-primary-fixed-dim/20 px-2.5 py-1 rounded-DEFAULT">已预约</span>
+</div>
+<div class="flex gap-4">
+<div class="w-24 h-24 rounded-lg bg-surface-variant overflow-hidden shrink-0">
+<img alt="" class="w-full h-full object-cover" data-alt="lush green forest trail with dappled morning sunlight filtering through tall trees, serene and calm atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoycTzoVwicH0npXgQBl8mVkTmEFaEy8ED33dADhtw1CJDAvITslIJbDfUMsnVqI2t7fJD0fIedR0P7hXUzBeVtQgBQMuakqbIEAXkctmnRsGH-KUXWbjO67G2VzeOQK8-GvI7mFl2g9rPS-p0bSuq8SLZHDg4Yxl1WipZSR1OcGg-ijZptLy_8J_dkre0iIhwENeJElYrgoZQtYXpxnRBmZ_Voqvgw_e59qHEhAXlI34ewkM4EKPB3nWUIFfYZ_YY3BtlHQS1O_u3"/>
+</div>
+<div class="flex flex-col justify-center flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">森林徒步导览</h3>
+<div class="flex items-center gap-1 text-label-md font-label-md text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>2023年10月24日 · 09:00</span>
+</div>
+<div class="flex items-center gap-1 text-label-md font-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">group</span>
+<span>2人</span>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2">
+<button class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-colors">详情</button>
+<button class="px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-opacity">修改</button>
+</div>
+</article>
+<!-- Order Card 2: Completed -->
+<article class="bg-surface-container-lowest rounded-xl p-5 shadow-[0_10px_30px_rgba(51,79,43,0.03)] border border-surface-variant flex flex-col gap-4">
+<div class="flex justify-between items-center pb-3 border-b border-surface-container-highest">
+<span class="text-label-md font-label-md text-on-surface-variant">订单 #QR881045</span>
+<span class="text-label-md font-label-md text-outline px-2.5 py-1 rounded-DEFAULT bg-surface-container">已完成</span>
+</div>
+<div class="flex gap-4">
+<div class="w-24 h-24 rounded-lg bg-surface-variant overflow-hidden shrink-0 opacity-90">
+<img alt="" class="w-full h-full object-cover" data-alt="stargazing tents at night illuminated from inside against a dark sky with a visible milky way, peaceful night setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTG_yBHdHFYie-t6L8NTOY-67PGkx2ey6RxY7St1ZzJjQ1fmjygFCsTdCgC6zfAu5AM6nUPNzvgo_wrzmVQNeGo8IiWYadKum73Wlzmm0_iJX6ar47MDzzrPJiPYdLpycG-1ea88YxLDB1Is7J_BE3x-b6myu0HmEUiopWcHMQfvNXNI9zj_FoPAKea4H50RBz5lYeIQnePEtrQ-471GHnMAQASyC40tc-dRTTYKLr5Akxrb0RNDBsLEK-G3M_VuQiof7Y59ufKz2B"/>
+</div>
+<div class="flex flex-col justify-center flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">星空谷露营</h3>
+<div class="flex items-center gap-1 text-label-md font-label-md text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>2023年9月12日 · 18:00</span>
+</div>
+<div class="flex items-center gap-1 text-label-md font-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">group</span>
+<span>4人</span>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2">
+<button class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-colors">详情</button>
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors">再次预订</button>
+</div>
+</article>
+<!-- Order Card 3: Cancelled -->
+<article class="bg-surface-container-lowest rounded-xl p-5 shadow-[0_10px_30px_rgba(51,79,43,0.03)] border border-surface-variant flex flex-col gap-4 opacity-75">
+<div class="flex justify-between items-center pb-3 border-b border-surface-container-highest">
+<span class="text-label-md font-label-md text-on-surface-variant">订单 #QR880922</span>
+<span class="text-label-md font-label-md text-on-surface-variant px-2.5 py-1 rounded-DEFAULT bg-surface-container">已取消</span>
+</div>
+<div class="flex gap-4">
+<div class="w-24 h-24 rounded-lg bg-surface-variant overflow-hidden shrink-0 grayscale-[50%]">
+<img alt="" class="w-full h-full object-cover" data-alt="tranquil yoga studio overlooking a misty mountain valley, wooden floors, serene morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh1vBcVAkZrbVDLbA7XsHntFZu64zzCEnuQCOZXFUnS1IQPyEq7rjavcs-AHd4AcQndl-kRrTsQG0UYQHPVwznCLolH9otgctZG-R6yr9MhjsOBWQgAdtpNzSTBVqKFh0TJus2ZFOK2qgzE1qyaur227nUnmXEfeEUNzBHQUiKjxZMzncJ59pErIb0cVF7NVOg-DM7Fq7aMInRqOkk4UO-q_wxyP1seEmydo6tqKeaAnANZBLKE1lcnADwPZZMTlQWfaB7LZKqEalX"/>
+</div>
+<div class="flex flex-col justify-center flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">日出瑜伽课程</h3>
+<div class="flex items-center gap-1 text-label-md font-label-md text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+<span>2023年8月5日 · 06:30</span>
+</div>
+<div class="flex items-center gap-1 text-label-md font-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">group</span>
+<span>1人</span>
+</div>
+</div>
+</div>
+<div class="flex justify-end gap-3 pt-2">
+<button class="px-4 py-2 rounded-lg border border-outline-variant text-on-surface font-label-md text-label-md hover:bg-surface-container-low transition-colors">详情</button>
+</div>
+</article>
+<!-- Empty space to ensure scroll past bottom nav -->
+<div class="h-8"></div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile only, hidden on md screens if following strict responsive, but we'll show it as instructed by the JSON logic for this app ecosystem) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 border-t border-stone-100 dark:border-stone-800 bg-white/90 dark:bg-stone-950/90 backdrop-blur-xl shadow-[0_-4px_20px_rgba(74,103,65,0.05)] fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-6 pb-safe font-serif text-[10px] tracking-wide">
+<!-- Home -->
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-emerald-700 dark:hover:text-emerald-200 active:scale-90 transition-transform">
+<span class="material-symbols-outlined mb-1">home</span>
+<span>首页</span>
+</button>
+<!-- Orders (Active) -->
+<button class="flex flex-col items-center justify-center text-emerald-800 dark:text-emerald-300 font-bold active:scale-90 transition-transform">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span>订单</span>
+</button>
+<!-- Profile -->
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-emerald-700 dark:hover:text-emerald-200 active:scale-90 transition-transform">
+<span class="material-symbols-outlined mb-1">person</span>
+<span>我的</span>
+</button>
+</nav>
+</body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>接驳车列表 - 泰康康养小镇</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f4f3f1",
+                    "outline-variant": "#c3c8bd",
+                    "tertiary-fixed": "#dde5da",
+                    "surface-variant": "#e3e2e0",
+                    "secondary-fixed": "#f8dfbf",
+                    "on-tertiary-fixed": "#161d17",
+                    "on-secondary-fixed-variant": "#55442d",
+                    "surface-bright": "#faf9f6",
+                    "primary-fixed-dim": "#afd0a1",
+                    "outline": "#73796f",
+                    "on-primary-fixed-variant": "#324e2a",
+                    "on-primary-fixed": "#062104",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e3e2e0",
+                    "secondary-fixed-dim": "#dbc3a4",
+                    "surface": "#faf9f6",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#6e5b43",
+                    "on-tertiary-fixed-variant": "#414941",
+                    "on-background": "#1a1c1a",
+                    "inverse-primary": "#afd0a1",
+                    "secondary-container": "#f5dcbc",
+                    "on-secondary-container": "#726046",
+                    "surface-container-high": "#e9e8e5",
+                    "on-primary-container": "#c2e4b4",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "primary": "#334f2b",
+                    "on-secondary-fixed": "#261906",
+                    "surface-dim": "#dbdad7",
+                    "on-surface": "#1a1c1a",
+                    "inverse-on-surface": "#f2f1ee",
+                    "primary-container": "#4a6741",
+                    "surface-tint": "#496640",
+                    "primary-fixed": "#caecbc",
+                    "on-tertiary-container": "#d5ddd2",
+                    "on-surface-variant": "#434840",
+                    "inverse-surface": "#2f312f",
+                    "tertiary": "#424a42",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#c1c9be",
+                    "surface-container": "#efeeeb",
+                    "error": "#ba1a1a",
+                    "background": "#faf9f6",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#5a625a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "48px",
+                    "gutter": "16px",
+                    "unit": "4px",
+                    "stack-md": "24px",
+                    "margin-page": "24px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Noto Serif"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg": ["Noto Serif"],
+                    "label-lg": ["Manrope"],
+                    "headline-md": ["Noto Serif"],
+                    "label-md": ["Manrope"],
+                    "body-sm": ["Manrope"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                    "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                    "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                    "label-lg": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                    "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                    "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.03em", "fontWeight": "500" }],
+                    "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                    "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar { display: none; }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface-bright text-on-surface min-h-screen pb-safe">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-md border-b border-stone-100 dark:border-stone-800 shadow-sm shadow-emerald-900/5 transition-opacity duration-300">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<button aria-label="返回" class="flex items-center justify-center w-10 h-10 -ml-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-emerald-800 dark:text-emerald-400">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-800 dark:text-emerald-400">spa</span>
+<h1 class="font-serif tracking-wide text-xl font-bold text-emerald-900 dark:text-emerald-50">泰康康养小镇</h1>
+</div>
+<div class="w-10"></div> <!-- Spacer for exact center alignment -->
+</div>
+</header>
+<main class="pt-24 px-margin-page pb-stack-lg max-w-md mx-auto">
+<!-- Header & Route Selector -->
+<section class="mb-stack-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-md">园区接驳车</h2>
+<!-- Route Cards -->
+<div class="flex overflow-x-auto gap-4 snap-x snap-mandatory pb-4 mb-stack-md -mx-margin-page px-margin-page no-scrollbar">
+<!-- Active Route Card -->
+<button class="flex-shrink-0 w-[260px] p-5 rounded-3xl bg-primary text-on-primary snap-center shadow-lg relative overflow-hidden text-left transition-transform hover:scale-[1.02]">
+<div class="absolute right-0 top-0 w-32 h-32 bg-white/10 rounded-full -mr-10 -mt-10 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl">directions_bus</span>
+<span class="bg-white/20 text-white px-2 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase">正在运营</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-1">内环线 (A线)</h3>
+<p class="font-body-sm text-body-sm text-white/80 mb-4">连接住宿区与主要景点</p>
+<div class="flex items-center gap-2 text-white/90 text-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>07:00 - 22:00 · 约20分钟/班</span>
+</div>
+</button>
+<!-- Inactive Route Card -->
+<button class="flex-shrink-0 w-[260px] p-5 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 text-on-surface snap-center shadow-sm relative overflow-hidden text-left transition-transform hover:scale-[1.02]">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-3xl text-primary">airport_shuttle</span>
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase">其他路线</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-1 text-on-surface">外环线 (B线)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">直达外部交通枢纽</p>
+<div class="flex items-center gap-2 text-on-surface-variant text-xs">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span>08:00 - 18:00 · 约40分钟/班</span>
+</div>
+</button>
+</div>
+</section>
+<!-- Route Stops Timeline -->
+<section class="relative">
+<!-- Continuous Vertical Line -->
+<div class="absolute left-[11px] top-6 bottom-12 w-px bg-outline-variant/40"></div>
+<!-- Stop 1: Reception -->
+<div class="relative flex gap-6 mb-stack-md group">
+<div class="relative z-10 w-6 h-6 mt-4 flex items-center justify-center bg-surface-bright">
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-4 rounded-2xl border border-surface-container flex gap-4 items-center">
+<div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container-low">
+<img alt="Reception Center" class="w-full h-full object-cover" data-alt="Modern minimalist wooden resort reception building nestled in lush green trees, soft morning light, serene atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcCe_pwhudvF9iN8hS0vuG5lr0Bl2sZEihhQPJ6OuJxQEgRYLTQuuQ_m7I5caIyMivmiggFzQ4XyUURxWLfD_K9OnQyxZEG84JCNjysGechHIiaraarWXfOpC9t3_eYSIU2U657RA1_DO5XOMZvOWkKtewGTnN721sEqB_pFfaVHf3unnQjbuouJUtbjFkR1iFpxTA_LFWuZhSN4af0-cWLkjORZULsnz1CldLhWx6_B2qPOLMekoGPnSHbobofZzvMSoW97FCyNpY"/>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">小镇接待中心</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">主入口 / 游客服务</p>
+</div>
+</div>
+</div>
+<!-- Stop 2: Closest Stop (Active State) -->
+<div class="relative flex gap-6 mb-stack-md">
+<div class="relative z-10 w-6 h-6 mt-4 flex items-center justify-center bg-surface-bright">
+<div class="w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-primary-fixed shadow-[0_0_12px_rgba(74,103,65,0.3)]"></div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-4 rounded-2xl shadow-[0_8px_30px_rgba(74,103,65,0.06)] border border-primary/10 flex gap-4 items-center relative overflow-hidden">
+<!-- Subtle highlight wash -->
+<div class="absolute inset-0 bg-gradient-to-r from-primary-fixed/20 to-transparent pointer-events-none"></div>
+<div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container-low relative z-10">
+<img alt="Residential Area" class="w-full h-full object-cover" data-alt="Elegant low-rise resort architecture with large windows and wooden louvers, integrated into natural hillside garden, dappled sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp8MScSo2ls4SDZaiCrqTaSPssh08n4DRDk7zy5HibZohOj76nrNgMFLzBiCmX4mZPCCtP6-fmUEQV6r6pYTNLBkHCnNPcL5tqzLjyeKLlLVS8qdPJoFuIyOH6YOTDDxpPsQeZzu5Q1Qq77uR9OlSwJXCDU3QgeeZP6KjQ3SAPDWMO5lZlU3__bHImn52zy1A9m5NroXR2qOEIIZqQAGvl4RbVhFgSgwFoRqONj2Xec-crPG3S5-CYbsYGlj6Kk7jTV7q6QAL3O2X2"/>
+</div>
+<div class="flex-1 relative z-10">
+<div class="flex items-center gap-2 mb-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">云松苑住宿区</h3>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded font-label-md text-label-md">离您最近</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">距离 120m · 预计步行 2分钟</p>
+<button class="flex items-center justify-center gap-1.5 py-2 px-4 rounded-lg bg-primary text-on-primary font-label-lg text-label-lg w-full hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+                            路线导航
+                        </button>
+</div>
+</div>
+</div>
+<!-- Stop 3: Spa / Wellness -->
+<div class="relative flex gap-6 mb-stack-md group">
+<div class="relative z-10 w-6 h-6 mt-4 flex items-center justify-center bg-surface-bright">
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-4 rounded-2xl border border-surface-container flex gap-4 items-center">
+<div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container-low">
+<img alt="Wellness Spa" class="w-full h-full object-cover" data-alt="Tranquil outdoor hot spring pool surrounded by bamboo forest, mist rising over water, zen wellness vibe, soft natural tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdANu3Y0QUo5LqcVO_9debFm5hF5HR83yEmwR_nj-nCGpuvOBJ15WWjEIxPw0EN1e17k9mWgWliazsKyZGPLzx1yMeTKDzwZ0tqHdryPozSVVh8TkMsil6j1MlgfmlgPLdoi-rZzfDprVw0Eah_nZ2TVzuAyzgO_Ev2Xrz6hu3VQsfxP4rN7ZVSNpxAd-VmoE7hmelaTrYplfdmCNIVtYZ_uXcjWTmIW9ZvfsARE7BawxgZgPK8LD8Rq09A-XdhXKMxvRAsWV_fv1H"/>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">竹林温泉谷</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">康养理疗 / 户外私汤</p>
+</div>
+</div>
+</div>
+<!-- Stop 4: Dining -->
+<div class="relative flex gap-6 group">
+<div class="relative z-10 w-6 h-6 mt-4 flex items-center justify-center bg-surface-bright">
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+</div>
+<div class="flex-1 bg-surface-container-lowest p-4 rounded-2xl border border-surface-container flex gap-4 items-center">
+<div class="w-20 h-20 rounded-xl overflow-hidden flex-shrink-0 bg-surface-container-low">
+<img alt="Restaurant" class="w-full h-full object-cover" data-alt="Minimalist fine dining restaurant interior with warm wood finishes, large windows looking out to nature, soft ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvQatfZ0LQWt3peUgZRLLXuM-CYh_3L0YTFEBnVplH5aSxgmpn-Dxb2NiKqOF_FTF-99DuB-MUsjPru_URcefzoGh1fb_Nsggh04YlUF0-LWN-IrQUsn5NSJNq0zNdfsnNwVkbM1bX1y4nROqkyzgjkODbwLK85rVvjBej8A5-VpNbJs2RLGcnhRvkslDCEIvUof4QoxoJRIW44OoMrNQdk2zFsyaovN5_ua6-LNpG5Xm8OVZr2-cIKlarji7E2CM-HNt3joTb3P7n"/>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-1">拾味拾光餐厅</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">有机膳食 / 观景露台</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+</body></html>

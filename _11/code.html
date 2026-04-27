@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="zh"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>泰康养生小镇 - 订单中心</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Noto+Serif:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e3e2e0",
+                    "secondary-fixed": "#f8dfbf",
+                    "on-tertiary-fixed": "#161d17",
+                    "tertiary-fixed": "#dde5da",
+                    "surface-container-low": "#f4f3f1",
+                    "outline-variant": "#c3c8bd",
+                    "surface": "#faf9f6",
+                    "surface-container-highest": "#e3e2e0",
+                    "secondary-fixed-dim": "#dbc3a4",
+                    "on-primary-fixed-variant": "#324e2a",
+                    "on-primary-fixed": "#062104",
+                    "error-container": "#ffdad6",
+                    "outline": "#73796f",
+                    "surface-bright": "#faf9f6",
+                    "primary-fixed-dim": "#afd0a1",
+                    "on-secondary-fixed-variant": "#55442d",
+                    "secondary": "#6e5b43",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#f5dcbc",
+                    "on-secondary-container": "#726046",
+                    "inverse-primary": "#afd0a1",
+                    "on-background": "#1a1c1a",
+                    "on-tertiary-fixed-variant": "#414941",
+                    "on-secondary-fixed": "#261906",
+                    "primary": "#334f2b",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "surface-container-high": "#e9e8e5",
+                    "on-primary-container": "#c2e4b4",
+                    "primary-container": "#4a6741",
+                    "inverse-on-surface": "#f2f1ee",
+                    "on-surface": "#1a1c1a",
+                    "surface-dim": "#dbdad7",
+                    "inverse-surface": "#2f312f",
+                    "on-tertiary-container": "#d5ddd2",
+                    "on-surface-variant": "#434840",
+                    "surface-tint": "#496640",
+                    "primary-fixed": "#caecbc",
+                    "tertiary-container": "#5a625a",
+                    "on-secondary": "#ffffff",
+                    "tertiary-fixed-dim": "#c1c9be",
+                    "surface-container": "#efeeeb",
+                    "error": "#ba1a1a",
+                    "background": "#faf9f6",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#424a42",
+                    "on-error": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "4px",
+                    "stack-sm": "8px",
+                    "stack-md": "24px",
+                    "margin-page": "24px",
+                    "stack-lg": "48px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "label-lg": ["Manrope"],
+                    "headline-md": ["Noto Serif"],
+                    "label-md": ["Manrope"],
+                    "body-sm": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "headline-sm": ["Noto Serif"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "label-lg": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "1", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { -webkit-tap-highlight-color: transparent; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-md border-b border-stone-200/50 dark:border-stone-800/50 shadow-none flex items-center justify-between px-6 h-16 w-full">
+<button class="flex items-center justify-center text-emerald-900 dark:text-emerald-100 hover:opacity-80 transition-opacity scale-95 duration-200">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h1 class="text-emerald-900 dark:text-emerald-100 font-serif tracking-tight text-lg font-semibold">订单中心</h1>
+<div class="w-6"></div> <!-- Spacer for centering -->
+</header>
+<!-- Sub Navigation Tabs (Adapted from NavigationDrawer labels) -->
+<div class="fixed top-16 w-full z-40 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex overflow-x-auto hide-scrollbar px-margin-page gap-8 items-center h-14">
+<button class="whitespace-nowrap font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-4">
+                游玩预约
+            </button>
+<button class="whitespace-nowrap font-label-lg text-label-lg text-on-surface-variant hover:text-primary transition-colors py-4">
+                酒店
+            </button>
+<button class="whitespace-nowrap font-label-lg text-label-lg text-primary border-b-2 border-primary py-4">
+                疗养
+            </button>
+</div>
+</div>
+<!-- Main Content Canvas -->
+<main class="pt-36 px-margin-page flex flex-col gap-stack-md">
+<!-- Order Item 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-4 flex flex-col gap-4 relative overflow-hidden ring-1 ring-outline-variant/50">
+<!-- Top section: ID & Status -->
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-3">
+<span class="font-label-md text-label-md text-on-surface-variant">订单号 #98234710</span>
+<span class="font-label-md text-label-md text-primary bg-primary-container/20 px-2 py-1 rounded-full">已预约</span>
+</div>
+<!-- Main Content Flex -->
+<div class="flex gap-4">
+<!-- Image -->
+<div class="w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container-low">
+<img alt="Singing bowl healing session" class="w-full h-full object-cover" data-alt="Close up of brass Tibetan singing bowls resting on a wooden floor in a sunlit, minimal meditation room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJClIsuKTRpq6VT3NEuUZOU-h_opJj6u53GmY-ZMqJyLnRMAnajzKRaAFxdXsbjI9s13bNu3HKcaKc8ubma5OeEtYXN8YkDBqtw1F0f6cu3oC5P2abZxBcC_pU09CqXra6JgqpuoWvwEA7bgCC_XOBrzJdt64Io5uQ8odmyYifw5hv5AM1NOIdBMM_W2x2FZGBFHRGdcLsYdYEUWJWxa9YtHihqAfog0OqgynLltoYtJdT64P4jOkFvExaxzcqLWDC61RJi0M7qZB6"/>
+</div>
+<!-- Details -->
+<div class="flex flex-col justify-between flex-1 py-1">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">颂钵疗愈</h2>
+<div class="flex items-center gap-1 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+<span class="font-body-sm text-body-sm">2023.10.25 · 14:00</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span class="font-body-sm text-body-sm">禅修阁</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="flex items-center pt-3 border-t border-outline-variant/30 justify-end">
+<span class="font-label-lg text-label-lg text-on-surface">1 次</span>
+<span class="font-serif text-headline-sm text-primary mr-auto ml-4">¥ 198.00</span><button class="bg-surface-container text-primary border border-outline-variant/50 font-label-md text-label-md px-4 py-2 rounded-lg hover:bg-surface-container-low transition-colors">
+                    详情
+                </button>
+</div>
+</article>
+<!-- Order Item 2 -->
+<article class="bg-surface-container-lowest rounded-xl p-4 flex flex-col gap-4 relative overflow-hidden ring-1 ring-outline-variant/50 opacity-80">
+<!-- Top section: ID & Status -->
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-3">
+<span class="font-label-md text-label-md text-on-surface-variant">订单号 #98234605</span>
+<span class="font-label-md text-label-md text-outline bg-surface-variant px-2 py-1 rounded-full">已核销</span>
+</div>
+<!-- Main Content Flex -->
+<div class="flex gap-4">
+<!-- Image -->
+<div class="w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container-low grayscale-[20%]">
+<img alt="Traditional tea ceremony" class="w-full h-full object-cover" data-alt="Minimalist ceramic teacup and wooden tray on a bamboo mat with soft, diffused natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7B6z6Tkv88j_r0MaYJdhMeTqaIedjIsMCQ7J_POzj4jcg8bY4X3w5vy3qsdiiQv7POUrfx9M4dIlfOOSZkckOD37KJa65yUh3h3qZzE2-SpIF3s5G5aXhfY1ICY-H-X6Yuem2syrDJG1KUwB0PMYx_QhVFkJXxWzerHIxRW7vkGDN6ez6Qf4zlorVF3Og_Az_MPRGDnOE1N3T1CXW0BDucL-N6hlqRrEV71KYhwn3axnitdkPA16ccR0KG65CL50ZSGYrPhgAhify"/>
+</div>
+<!-- Details -->
+<div class="flex flex-col justify-between flex-1 py-1">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">茶道体验</h2>
+<div class="flex items-center gap-1 text-on-surface-variant mb-1">
+<span class="material-symbols-outlined text-[14px]">calendar_month</span>
+<span class="font-body-sm text-body-sm">2023.10.20 · 10:30</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+<span class="font-body-sm text-body-sm">竹林雅室</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="flex items-center pt-3 border-t border-outline-variant/30 justify-end">
+<span class="font-label-lg text-label-lg text-on-surface">2 人</span>
+<span class="font-serif text-headline-sm text-primary mr-auto ml-4">¥ 256.00</span><button class="bg-transparent text-on-surface-variant border border-outline-variant font-label-md text-label-md px-4 py-2 rounded-lg hover:bg-surface-variant transition-colors">
+                    详情
+                </button>
+</div>
+</article>
+<!-- Empty State Indicator (Optional, subtle) -->
+<div class="flex flex-col items-center justify-center py-12 text-on-surface-variant/60">
+<span class="material-symbols-outlined text-[32px] mb-2 opacity-50" style="font-variation-settings: 'wght' 200;">spa</span>
+<p class="font-body-sm text-body-sm text-center">没有更多订单了</p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full h-20 flex justify-around items-center px-6 pb-safe bg-white/90 dark:bg-stone-950/90 backdrop-blur-xl border-t border-stone-100 dark:border-stone-800 shadow-[0_-4px_20px_rgba(74,103,65,0.05)] z-50">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-emerald-700 dark:hover:text-emerald-200 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-serif text-[10px] tracking-wide">首页</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-800 dark:text-emerald-300 font-bold hover:text-emerald-700 dark:hover:text-emerald-200 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-serif text-[10px] tracking-wide">订单</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 hover:text-emerald-700 dark:hover:text-emerald-200 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-serif text-[10px] tracking-wide">我的</span>
+</a>
+</nav>
+</body></html>

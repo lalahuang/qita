@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>游玩预约 - 祺泰康养小镇</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Noto+Serif:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ba1a1a",
+                    "secondary": "#6e5b43",
+                    "on-error": "#ffffff",
+                    "tertiary": "#424a42",
+                    "secondary-fixed-dim": "#dbc3a4",
+                    "tertiary-container": "#5a625a",
+                    "surface-tint": "#496640",
+                    "surface-bright": "#faf9f6",
+                    "inverse-primary": "#afd0a1",
+                    "outline-variant": "#c3c8bd",
+                    "inverse-surface": "#2f312f",
+                    "on-primary-container": "#c2e4b4",
+                    "outline": "#73796f",
+                    "primary-fixed": "#caecbc",
+                    "on-secondary-container": "#726046",
+                    "surface-container": "#efeeeb",
+                    "surface-container-high": "#e9e8e5",
+                    "secondary-container": "#f5dcbc",
+                    "on-primary-fixed": "#062104",
+                    "primary-container": "#4a6741",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#261906",
+                    "surface-container-highest": "#e3e2e0",
+                    "surface": "#faf9f6",
+                    "on-primary": "#ffffff",
+                    "inverse-on-surface": "#f2f1ee",
+                    "on-tertiary-fixed": "#161d17",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed-variant": "#414941",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#434840",
+                    "primary": "#334f2b",
+                    "on-tertiary": "#ffffff",
+                    "background": "#faf9f6",
+                    "tertiary-fixed": "#dde5da",
+                    "surface-container-low": "#f4f3f1",
+                    "on-surface": "#1a1c1a",
+                    "on-primary-fixed-variant": "#324e2a",
+                    "surface-dim": "#dbdad7",
+                    "secondary-fixed": "#f8dfbf",
+                    "on-secondary-fixed-variant": "#55442d",
+                    "surface-variant": "#e3e2e0",
+                    "tertiary-fixed-dim": "#c1c9be",
+                    "primary-fixed-dim": "#afd0a1",
+                    "on-tertiary-container": "#d5ddd2",
+                    "on-background": "#1a1c1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "stack-lg": "48px",
+                    "gutter": "16px",
+                    "stack-md": "24px",
+                    "margin-page": "24px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Noto Serif"],
+                    "body-sm": ["Manrope"],
+                    "body-md": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "label-lg": ["Manrope"],
+                    "body-lg": ["Manrope"],
+                    "headline-sm": ["Noto Serif"],
+                    "headline-lg": ["Noto Serif"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "1", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                    "label-lg": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background min-h-screen text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-stone-50/90 dark:bg-stone-900/90 backdrop-blur-md shadow-sm shadow-[#4A6741]/5 flex flex-col justify-center px-6 h-14">
+<div class="flex items-center justify-between w-full relative">
+<button aria-label="返回" class="text-[#4A6741] dark:text-[#a3b899] hover:opacity-80 transition-opacity flex items-center justify-center p-2 -ml-2">
+<span class="material-symbols-outlined text-[24px]">arrow_back_ios</span>
+</button>
+<h1 class="absolute left-1/2 -translate-x-1/2 text-[#4A6741] dark:text-[#a3b899] font-serif text-lg tracking-wide font-bold">疗养课程页</h1>
+<div class="w-10"></div> <!-- Spacer for center alignment -->
+</div>
+</header>
+<main class="pt-[72px] pb-[90px] px-margin-page max-w-2xl mx-auto">
+<!-- Search -->
+<div class="mb-stack-md">
+<div class="relative flex items-center bg-surface-container rounded-full h-12 px-4 shadow-[0_4px_20px_rgba(74,103,65,0.03)] border border-surface-dim/30">
+<span class="material-symbols-outlined text-outline mr-3">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface placeholder:text-outline p-0 focus:outline-none" placeholder="探索自然、文化与身心疗愈..." type="text"/>
+</div>
+</div>
+<!-- Categories -->
+<div class="mb-stack-lg overflow-x-auto no-scrollbar -mx-margin-page px-margin-page">
+<div class="flex gap-3 whitespace-nowrap min-w-max">
+<button class="px-5 py-2.5 rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg transition-colors">全部</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-lg text-label-lg transition-colors">自然探索</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-lg text-label-lg transition-colors">文化体验</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-lg text-label-lg transition-colors">康养运动</button>
+</div>
+</div>
+<!-- Experience List -->
+<div class="space-y-stack-md">
+<!-- Card 1 -->
+<article class="group relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(74,103,65,0.08)] bg-surface-container-lowest border border-surface-variant/50 flex flex-col md:flex-row h-auto md:h-48 transition-transform duration-300 hover:scale-[1.01]">
+<div class="w-full md:w-2/5 h-48 md:h-full relative overflow-hidden">
+<img alt="茂密的原始森林，阳光透过树冠洒下光斑" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="dense ancient forest with tall pine trees, sunbeams piercing through the green canopy, soft misty morning light, highly detailed nature photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq6pjvXmy-w1aFOqL2-Ns3-OezG2MQ4bS7H3Lu7PPLmUfeZgRlh5lcU4tYZbhIjXJU1gvPRkDfdkWFvfkCzfNsHJlMEJF7Q2l2MkuyWDW7x2OkYDyfOckthHauJdHbGsW3ialOuTN7LU4X6omU3QdLCW82IOkncFn7T1DPXNfYT9bTEkx-niD8H6pgTKL1hZCFkq6QwD9pkyMRHOdX_NznaaTr5805nCY39ReDzOMaIkE23oge-ZIjVObp4DtTPbJ7FKS4QMwybUZt"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-gradient-to-r"></div>
+<div class="absolute top-3 left-3 bg-tertiary-container/90 backdrop-blur-sm text-on-tertiary px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">forest</span>
+                        自然探索
+                    </div>
+</div>
+<div class="w-full md:w-3/5 p-5 flex flex-col justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2 group-hover:text-primary transition-colors">森林徒步疗愈</h2>
+<div class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-4 mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-outline">schedule</span> 09:00-11:30</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-outline">group</span> 小团 (8人)</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline line-clamp-2">跟随专业向导深入负氧离子爆棚的原始林区，通过五感疗法释放都市压力，回归内心的宁静。</p>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div class="text-primary font-headline-sm text-headline-sm">¥199 <span class="font-body-sm text-body-sm text-outline font-normal">/人</span></div>
+<button class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg transition-colors shadow-sm">立即预约</button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(74,103,65,0.08)] bg-surface-container-lowest border border-surface-variant/50 flex flex-col md:flex-row h-auto md:h-48 transition-transform duration-300 hover:scale-[1.01]">
+<div class="w-full md:w-2/5 h-48 md:h-full relative overflow-hidden">
+<img alt="繁星下的帐篷与篝火，温馨的露营氛围" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="luxury canvas glamping tent under a spectacular starry night sky, warm glowing campfire in the foreground, cozy evening atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-CmXijJKGVnxXiHIR4QUzQAnNTZbN2RFGEAoOJ0zA59Ox0-4IuMpNaZ-4f4PmAgtY-roaOqufoQG-tWVmLxWZI1XrqhTFWrjej3zmuM53AM_0HPLzmgiVVkD1pJgbVNYIQzXCQOBDBwqWskW75eQ87Dv_C25WzrW2aMRtliuMlsvvXNwYf6n45xdMoB3wDt8MyD9v6wKg6nljAC8jAEyXN9vDBCJZVgRNa_pWlImeskF-LBy4Z292vtrl5J3yLsKF6CAfkeyKK6hm"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-gradient-to-r"></div>
+<div class="absolute top-3 left-3 bg-secondary-fixed-dim/90 backdrop-blur-sm text-on-secondary-fixed px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_fire_department</span>
+                        文化体验
+                    </div>
+</div>
+<div class="w-full md:w-3/5 p-5 flex flex-col justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2 group-hover:text-primary transition-colors">星空露营篝火</h2>
+<div class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-4 mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-outline">schedule</span> 19:00-22:00</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-outline">restaurant</span> 含轻食</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline line-clamp-2">远离光污染，在繁星下围炉夜话。提供高品质帐篷休息区、精致户外简餐及天文望远镜观星指导。</p>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div class="text-primary font-headline-sm text-headline-sm">¥599 <span class="font-body-sm text-body-sm text-outline font-normal">/位</span></div>
+<button class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg transition-colors shadow-sm">立即预约</button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(74,103,65,0.08)] bg-surface-container-lowest border border-surface-variant/50 flex flex-col md:flex-row h-auto md:h-48 transition-transform duration-300 hover:scale-[1.01]">
+<div class="w-full md:w-2/5 h-48 md:h-full relative overflow-hidden">
+<img alt="清晨阳光下的草地，瑜伽练习场景" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="woman practicing yoga on a lush green lawn during early morning sunrise, soft golden hour lighting, tranquil resort setting, dew on grass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASVJ_BEO585I8fPEJiis-OpT-fT1blNDHwd545qtmpCpxwv2D5xXV_pw8ucctgQRKqZ0TcFoTZFOcDze5z3iRfycVlbq66IRO5Zsk01PYiHUM4P4fk9c4T3KBmS5DXj20aOmQ_1yeTYT-ynbnuIhbyPbylkl5i0HDAnmjZLOOk05TbCFMDPPQ3RjnulZbknExVWZ0EOEeugJW4OaSS6Odvcirna149JSV_8KUcCht6e4_hRco0ga2J72J7Hu0WXswIechtkkuVDYVQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-gradient-to-r"></div>
+<div class="absolute top-3 left-3 bg-[#afd0a1]/90 backdrop-blur-sm text-on-primary-container px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">self_improvement</span>
+                        康养运动
+                    </div>
+</div>
+<div class="w-full md:w-3/5 p-5 flex flex-col justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2 group-hover:text-primary transition-colors">草地瑜伽晨练</h2>
+<div class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-4 mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-outline">schedule</span> 06:30-08:00</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-outline">fitness_center</span> 零基础可</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline line-clamp-2">沐浴清晨第一缕阳光，在露水未干的草坪上，由资深瑜伽导师带领进行舒缓的拉伸与呼吸练习。</p>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div class="text-primary font-headline-sm text-headline-sm">¥99 <span class="font-body-sm text-body-sm text-outline font-normal">/人</span></div>
+<button class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg transition-colors shadow-sm">立即预约</button>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="group relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(74,103,65,0.08)] bg-surface-container-lowest border border-surface-variant/50 flex flex-col md:flex-row h-auto md:h-48 transition-transform duration-300 hover:scale-[1.01]">
+<div class="w-full md:w-2/5 h-48 md:h-full relative overflow-hidden">
+<img alt="蜿蜒的山间古道，适合骑行探索" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="winding narrow stone path through lush green hills and mountains, cycling trail, bright afternoon light, dynamic outdoor scenery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcjv07Iiy1ed6V_FzJUuX2l6N0hk927BfoR9D1GfUk38xkiyqr7BYJ9Pfpg-XYFBp0eElmw2r0G0zMHeKbHDOuISntdLqHhmUdOxcM3keA4kRFWKAmj8x9hu6nCXipYRZFJKE34eQlTJ5MFXup8xVC0bhqelRNFuiLGbsrNcF_dw7s3gQXnLdWUfiQFllySz97d2J3Qrm3FP7PEjDUOrs-6ozVnImAKYCFg5_4tkJCTYJvNB8BcolJbaSa2p7Oj1RjMlFFfnBpHDwt"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-gradient-to-r"></div>
+<div class="absolute top-3 left-3 bg-tertiary-container/90 backdrop-blur-sm text-on-tertiary px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">pedal_bike</span>
+                        自然探索
+                    </div>
+</div>
+<div class="w-full md:w-3/5 p-5 flex flex-col justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-2 group-hover:text-primary transition-colors">古道骑行探索</h2>
+<div class="flex items-center text-on-surface-variant font-body-sm text-body-sm gap-4 mb-3">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-outline">schedule</span> 14:00-17:00</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-outline">directions_bike</span> 提供装备</span>
+</div>
+<p class="font-body-sm text-body-sm text-outline line-clamp-2">骑乘高端山地车，穿梭于百年古道与茶园之间，感受微风拂面与心跳加速的双重愉悦。</p>
+</div>
+<div class="flex items-end justify-between mt-4">
+<div class="text-primary font-headline-sm text-headline-sm">¥299 <span class="font-body-sm text-body-sm text-outline font-normal">/人</span></div>
+<button class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg transition-colors shadow-sm">立即预约</button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-2 pb-safe bg-stone-50 dark:bg-stone-950 rounded-t-2xl md:hidden" style="box-shadow: 0 -4px 20px rgba(74,103,65,0.05);">
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-[#4A6741] transition-colors py-2 min-w-[64px]">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-serif text-[11px] font-medium">首页</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#4A6741] dark:text-[#a3b899] font-bold scale-110 transition-transform duration-300 py-2 min-w-[64px]">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">event_available</span>
+<span class="font-serif text-[11px] font-medium">预约</span>
+</button>
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-[#4A6741] transition-colors py-2 min-w-[64px]">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">auto_awesome</span>
+<span class="font-serif text-[11px] font-medium">动态</span>
+</button>
+<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-[#4A6741] transition-colors py-2 min-w-[64px]">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-serif text-[11px] font-medium">我的</span>
+</button>
+</nav>
+</body></html>

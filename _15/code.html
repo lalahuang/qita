@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>确认预约</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f4f3f1",
+                        "outline-variant": "#c3c8bd",
+                        "tertiary-fixed": "#dde5da",
+                        "surface-variant": "#e3e2e0",
+                        "secondary-fixed": "#f8dfbf",
+                        "on-tertiary-fixed": "#161d17",
+                        "on-secondary-fixed-variant": "#55442d",
+                        "surface-bright": "#faf9f6",
+                        "primary-fixed-dim": "#afd0a1",
+                        "outline": "#73796f",
+                        "on-primary-fixed-variant": "#324e2a",
+                        "on-primary-fixed": "#062104",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e3e2e0",
+                        "secondary-fixed-dim": "#dbc3a4",
+                        "surface": "#faf9f6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#6e5b43",
+                        "on-tertiary-fixed-variant": "#414941",
+                        "on-background": "#1a1c1a",
+                        "inverse-primary": "#afd0a1",
+                        "secondary-container": "#f5dcbc",
+                        "on-secondary-container": "#726046",
+                        "surface-container-high": "#e9e8e5",
+                        "on-primary-container": "#c2e4b4",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "primary": "#334f2b",
+                        "on-secondary-fixed": "#261906",
+                        "surface-dim": "#dbdad7",
+                        "on-surface": "#1a1c1a",
+                        "inverse-on-surface": "#f2f1ee",
+                        "primary-container": "#4a6741",
+                        "surface-tint": "#496640",
+                        "primary-fixed": "#caecbc",
+                        "on-tertiary-container": "#d5ddd2",
+                        "on-surface-variant": "#434840",
+                        "inverse-surface": "#2f312f",
+                        "tertiary": "#424a42",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#c1c9be",
+                        "surface-container": "#efeeeb",
+                        "error": "#ba1a1a",
+                        "background": "#faf9f6",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#5a625a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "48px",
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "stack-md": "24px",
+                        "margin-page": "24px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Noto Serif"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["Noto Serif"],
+                        "label-lg": ["Manrope"],
+                        "headline-md": ["Noto Serif"],
+                        "label-md": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.03em", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-md border-b border-stone-100 dark:border-stone-800 shadow-sm shadow-emerald-900/5 transition-opacity duration-300 flex justify-between items-center px-6 h-16">
+<div class="flex items-center text-emerald-800 dark:text-emerald-400 hover:opacity-80 transition-opacity duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-2xl" data-icon="spa">spa</span>
+</div>
+<span class="text-xl font-bold text-emerald-900 dark:text-emerald-50 font-serif tracking-wide absolute left-1/2 -translate-x-1/2">泰康养小镇</span>
+<div class="w-8"></div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-1 pt-24 px-margin-page pb-32 max-w-2xl mx-auto w-full flex flex-col gap-stack-md">
+<!-- Page Intent Headline -->
+<header class="mb-2">
+<div class="flex items-center gap-2 mb-2 -ml-2">
+<button aria-label="返回" class="p-2 hover:bg-surface-container rounded-full transition-colors flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">确认预约</h1>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">请核对您的疗养行程信息</p>
+</header>
+<!-- Course Summary Card -->
+<section class="bg-surface-container-lowest rounded-xl p-4 flex gap-4 border border-surface-container-high shadow-[0_10px_30px_rgba(74,103,65,0.03)] relative overflow-hidden">
+<!-- Decorative wood accent line -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary-container"></div>
+<div class="w-28 h-28 shrink-0 rounded-lg overflow-hidden bg-surface-container">
+<img alt="Course Image" class="w-full h-full object-cover" data-alt="close up of an artisan singing bowl on a wooden surface in a dimly lit serene spa room with warm ambient light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD97r0IOhKVuDaDeZjA1CCcJLEX7NmLmhkMPpY-24jGOt8qHoCNCZ4kfJU7f5c_2flNV9Zi0e1vb66mcLF4NzIAzc2w5ZkcZvAo1MzuDa5-u8drb_24bdMI-sv2Zgy3vgXkhsRGV51R4hq0l7ILDyp9LxB6QJn2YR60Kes7_J1bslPmIioBIflkQH6ygHr_sRNVXGvVBHv1OHayu8-M26dmv2DEAQfjuoLdo-D4MVp06SnsLb9pD1-yoN2xyAbVCcsv7K5wvTckAkiP"/>
+</div>
+<div class="flex flex-col justify-center py-1">
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">颂钵音疗深度放松</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-2">通过古老颂钵的频率共振，引导大脑进入深度放松的阿尔法波状态，缓解焦虑与疲劳。</p>
+<div class="flex items-center gap-1">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-2 py-1 rounded text-xs font-label-md">60分钟</span>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 rounded text-xs font-label-md">深度助眠</span>
+</div>
+</div>
+</section>
+<!-- Appointment Details Card -->
+<section class="bg-surface-container-lowest rounded-xl p-6 border border-surface-container-high shadow-[0_10px_30px_rgba(74,103,65,0.03)] flex flex-col gap-6">
+<!-- Date & Time -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed/30 flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</div>
+<div class="flex-1 border-b border-surface-container pb-4">
+<p class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider">预约时间</p>
+<p class="font-body-lg text-body-lg text-on-surface font-medium">2024年5月20日 (周一)</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">14:00 - 15:00</p>
+</div>
+</div>
+<!-- Location -->
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed/30 flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider">疗养地点</p>
+<p class="font-body-lg text-body-lg text-on-surface font-medium">静心阁 - 冥想室</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">康养中心 B栋 3楼</p>
+</div>
+</div>
+</section>
+<!-- Guest Info (Simplified) -->
+<section class="bg-surface-container-lowest rounded-xl p-6 border border-surface-container-high shadow-[0_10px_30px_rgba(74,103,65,0.03)] flex justify-between items-center">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-outline" data-icon="person">person</span>
+<span class="font-body-md text-body-md text-on-surface">预约人</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface font-medium">
+                张先生
+            </div>
+</section>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<footer class="fixed bottom-0 w-full bg-surface-container-lowest border-t border-surface-container pb-safe z-40 shadow-[0_-4px_20px_rgba(0,0,0,0.02)]">
+<div class="max-w-2xl mx-auto w-full px-margin-page h-24 flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface-variant mb-1">应付金额</span>
+<div class="flex items-baseline gap-1 text-primary">
+<span class="font-body-md text-body-md">¥</span>
+<span class="font-headline-lg text-headline-lg font-medium tracking-tight">580</span>
+</div>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg px-8 py-4 rounded-lg shadow-sm transition-colors duration-200 flex items-center gap-2">
+                确认提交
+                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</footer>
+</body></html>

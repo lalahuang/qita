@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>预约成功</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Noto+Serif:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Guidelines -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#062104",
+                    "on-tertiary": "#ffffff",
+                    "surface-variant": "#e3e2e0",
+                    "primary-container": "#4a6741",
+                    "tertiary-container": "#5a625a",
+                    "on-error": "#ffffff",
+                    "outline": "#73796f",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#1a1c1a",
+                    "on-background": "#1a1c1a",
+                    "surface-dim": "#dbdad7",
+                    "inverse-surface": "#2f312f",
+                    "surface-container-highest": "#e3e2e0",
+                    "background": "#faf9f6",
+                    "on-surface-variant": "#434840",
+                    "inverse-primary": "#afd0a1",
+                    "error-container": "#ffdad6",
+                    "tertiary-fixed": "#dde5da",
+                    "surface-container": "#efeeeb",
+                    "inverse-on-surface": "#f2f1ee",
+                    "tertiary-fixed-dim": "#c1c9be",
+                    "primary": "#334f2b",
+                    "tertiary": "#424a42",
+                    "on-primary": "#ffffff",
+                    "surface": "#faf9f6",
+                    "on-tertiary-fixed-variant": "#414941",
+                    "secondary-container": "#f5dcbc",
+                    "on-tertiary-container": "#d5ddd2",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#dbc3a4",
+                    "on-secondary-fixed-variant": "#55442d",
+                    "primary-fixed": "#caecbc",
+                    "on-secondary-fixed": "#261906",
+                    "surface-bright": "#faf9f6",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#c2e4b4",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#496640",
+                    "surface-container-high": "#e9e8e5",
+                    "primary-fixed-dim": "#afd0a1",
+                    "on-tertiary-fixed": "#161d17",
+                    "secondary": "#6e5b43",
+                    "outline-variant": "#c3c8bd",
+                    "secondary-fixed": "#f8dfbf",
+                    "surface-container-low": "#f4f3f1",
+                    "on-secondary-container": "#726046",
+                    "on-primary-fixed-variant": "#324e2a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "48px",
+                    "unit": "4px",
+                    "stack-md": "24px",
+                    "margin-page": "24px",
+                    "stack-sm": "8px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Noto Serif"],
+                    "label-lg": ["Manrope"],
+                    "body-sm": ["Manrope"],
+                    "label-md": ["Manrope"],
+                    "headline-md": ["Noto Serif"],
+                    "body-md": ["Manrope"],
+                    "headline-sm": ["Noto Serif"],
+                    "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "1", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col relative selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar Shared Component -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 border-b border-[#4A6741]/10 bg-stone-50/80 backdrop-blur-md">
+<button aria-label="Close" class="text-[#4A6741] hover:opacity-80 transition-opacity active:scale-95 transition-transform flex items-center justify-center p-2 -ml-2">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</button>
+<h1 class="text-lg font-semibold text-[#4A6741] font-serif tracking-tight">预约成功</h1>
+<div class="w-10"></div> <!-- Spacer to perfectly center headline -->
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 pt-[88px] pb-stack-lg px-margin-page max-w-md mx-auto w-full flex flex-col">
+<!-- Success Hero -->
+<section class="flex flex-col items-center text-center mt-stack-md mb-stack-lg">
+<div class="w-20 h-20 bg-primary-fixed rounded-full flex items-center justify-center mb-stack-sm shadow-[0_10px_30px_rgba(74,103,65,0.05)] relative">
+<!-- Gentle ambient glow -->
+<div class="absolute inset-0 bg-primary-fixed rounded-full blur-xl opacity-50"></div>
+<span class="material-symbols-outlined text-primary text-[40px] relative z-10" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-unit">预约成功</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[280px]">您的宁静之所已准备就绪。我们已为您安排好了一切，期待您的正念之旅。</p>
+</section>
+<!-- Order Summary Card -->
+<section class="bg-surface-container-lowest border border-outline-variant/30 rounded-2xl p-6 shadow-[0_4px_24px_rgba(0,0,0,0.04)] relative overflow-hidden mb-stack-lg">
+<!-- Subtle organic texture hint via gradient -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-primary-fixed/20 to-transparent rounded-bl-full pointer-events-none opacity-50"></div>
+<header class="flex justify-between items-center mb-6 relative z-10">
+<span class="inline-flex items-center px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md">待入住</span>
+<span class="font-label-md text-label-md text-outline tracking-wider uppercase">订单号：#AW7829K</span>
+</header>
+<div class="flex gap-4 mb-6 relative z-10">
+<div class="w-24 h-24 rounded-xl overflow-hidden shrink-0 bg-surface-variant shadow-[0_2px_8px_rgba(0,0,0,0.08)]">
+<img alt="Zen Mountain View Room" class="w-full h-full object-cover" data-alt="Interior view of a minimalist luxury resort room featuring tatami mat flooring, a low wooden platform bed with crisp white linens, and a large expansive window overlooking a lush, misty green mountain forest. Soft natural daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3UdveedK_3GSfJ7Y8TK9JnyFLXRFLeokK3dkq2naAJt1DVWYeJNvlzZzAo0Tr82lR8xVmbyhLTHCsgDDpVGlELrUy1Hg7KV-5cQkID00s2MSwrgDUbR96uu1Prf5mBVkdsLo1Qg6SmE7OWPwXKttfMsowhudWCAKBoy1t6upJVYpgXoPANM42MLXwisUd3xObHlDl-poZfcVd773WIqykRZrA0m-zZmmtXmKto1jTpzimUgpfftVCRtElTm98j38E4F49jkY1iiNH"/>
+</div>
+<div class="flex flex-col justify-center">
+<h3 class="font-headline-sm text-[22px] leading-tight text-on-surface mb-1">安缦森林悦舍</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">禅意山景大床房</p>
+</div>
+</div>
+<!-- Custom Atmospheric Divider -->
+<div class="h-[1px] w-full bg-outline-variant/30 mb-6 relative z-10"></div>
+<div class="grid grid-cols-2 gap-y-5 gap-x-4 relative z-10">
+<div>
+<h4 class="font-label-md text-label-md text-outline mb-1">入住日期</h4>
+<p class="font-body-md text-[16px] font-medium text-on-surface">2023年10月12日</p>
+<p class="font-body-sm text-[13px] text-on-surface-variant mt-0.5">禅意山景大床房</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-outline mb-1">离店日期</h4>
+<p class="font-body-md text-[16px] font-medium text-on-surface">2023年10月15日</p>
+<p class="font-body-sm text-[13px] text-on-surface-variant mt-0.5">禅意山景大床房</p>
+</div>
+<div class="col-span-2 flex items-center gap-3 pt-2">
+<span class="material-symbols-outlined text-outline text-[20px]">nights_stay</span>
+<p class="font-body-md text-[15px] text-on-surface">3 晚 <span class="text-outline/50 mx-2">•</span> 2 位访客</p>
+</div>
+</div>
+</section>
+<!-- Actions -->
+<section class="mt-auto flex flex-col gap-3 pb-8">
+<button class="w-full bg-primary text-on-primary font-label-lg text-[16px] h-14 rounded-xl hover:bg-primary/90 transition-colors duration-300 flex justify-center items-center shadow-sm">订单详情</button>
+<button class="w-full border border-outline-variant bg-transparent text-on-surface font-label-lg text-[16px] h-14 rounded-xl hover:bg-surface-container-high transition-colors duration-300 flex justify-center items-center">探索更多</button>
+</section>
+</main>
+</body></html>

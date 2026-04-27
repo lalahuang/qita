@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>餐厅列表 - 康养小镇</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Noto Serif & Manrope for visual identity -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Noto+Serif:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#f4f3f1",
+                    "outline-variant": "#c3c8bd",
+                    "tertiary-fixed": "#dde5da",
+                    "surface-variant": "#e3e2e0",
+                    "secondary-fixed": "#f8dfbf",
+                    "on-tertiary-fixed": "#161d17",
+                    "on-secondary-fixed-variant": "#55442d",
+                    "surface-bright": "#faf9f6",
+                    "primary-fixed-dim": "#afd0a1",
+                    "outline": "#73796f",
+                    "on-primary-fixed-variant": "#324e2a",
+                    "on-primary-fixed": "#062104",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e3e2e0",
+                    "secondary-fixed-dim": "#dbc3a4",
+                    "surface": "#faf9f6",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary": "#6e5b43",
+                    "on-tertiary-fixed-variant": "#414941",
+                    "on-background": "#1a1c1a",
+                    "inverse-primary": "#afd0a1",
+                    "secondary-container": "#f5dcbc",
+                    "on-secondary-container": "#726046",
+                    "surface-container-high": "#e9e8e5",
+                    "on-primary-container": "#c2e4b4",
+                    "on-error-container": "#93000a",
+                    "on-primary": "#ffffff",
+                    "primary": "#334f2b",
+                    "on-secondary-fixed": "#261906",
+                    "surface-dim": "#dbdad7",
+                    "on-surface": "#1a1c1a",
+                    "inverse-on-surface": "#f2f1ee",
+                    "primary-container": "#4a6741",
+                    "surface-tint": "#496640",
+                    "primary-fixed": "#caecbc",
+                    "on-tertiary-container": "#d5ddd2",
+                    "on-surface-variant": "#434840",
+                    "inverse-surface": "#2f312f",
+                    "tertiary": "#424a42",
+                    "on-error": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#c1c9be",
+                    "surface-container": "#efeeeb",
+                    "error": "#ba1a1a",
+                    "background": "#faf9f6",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#5a625a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "48px",
+                    "gutter": "16px",
+                    "unit": "4px",
+                    "stack-md": "24px",
+                    "margin-page": "24px",
+                    "stack-sm": "8px"
+            },
+            "fontFamily": {
+                    "headline-sm": ["Noto Serif"],
+                    "body-lg": ["Manrope"],
+                    "headline-lg": ["Noto Serif"],
+                    "label-lg": ["Manrope"],
+                    "headline-md": ["Noto Serif"],
+                    "label-md": ["Manrope"],
+                    "body-sm": ["Manrope"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "label-lg": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "1", "letterSpacing": "0.03em", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Hide scrollbar for horizontal scrolling tabs to maintain clean aesthetic */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen pb-32 pt-24 font-body-md">
+<!-- TopAppBar Shared Component -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-md border-b border-stone-100 dark:border-stone-800 shadow-sm shadow-emerald-900/5 transition-opacity duration-300">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-2 hover:opacity-80 cursor-pointer"><button aria-label="Go back" class="mr-1 p-1 -ml-1 rounded-full hover:bg-emerald-50 dark:hover:bg-stone-800 transition-colors duration-200 flex items-center justify-center">
+<span class="material-symbols-outlined text-emerald-800 dark:text-emerald-400 text-[24px]" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<span class="material-symbols-outlined text-emerald-800 dark:text-emerald-400" style="font-variation-settings: 'FILL' 0;">spa</span>
+</div>
+<h1 class="text-xl font-bold text-emerald-900 dark:text-emerald-50 font-serif tracking-wide text-center absolute left-1/2 -translate-x-1/2">泰康康养小镇</h1>
+<div class="w-6"><!-- Spacer for center alignment --></div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-md mx-auto">
+<!-- Page Header (Atmospheric Introduction) -->
+<header class="px-margin-page mb-stack-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">山林食间</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-unit">放慢脚步，品味自然馈赠的疗愈滋味。</p>
+</header>
+<!-- Category Filter Tabs (Horizontal Scroll) -->
+<section class="mb-stack-lg">
+<div class="flex overflow-x-auto no-scrollbar px-margin-page gap-stack-sm py-2">
+<!-- Active Chip -->
+<button class="flex-shrink-0 px-5 py-2.5 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md transition-colors">
+                    全部甄选
+                </button>
+<!-- Inactive Chips -->
+<button class="flex-shrink-0 px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-colors">
+                    融合中餐
+                </button>
+<button class="flex-shrink-0 px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-colors">
+                    雅致西餐
+                </button>
+<button class="flex-shrink-0 px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-colors">
+                    自然素食
+                </button>
+<button class="flex-shrink-0 px-5 py-2.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-highest transition-colors">
+                    静谧咖饮
+                </button>
+</div>
+</section>
+<!-- Restaurant List Cards -->
+<section class="px-margin-page flex flex-col gap-stack-md">
+<!-- Card 1: Chinese -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(74,103,65,0.05)] border border-surface-container-low">
+<div class="relative w-full aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Elegant chinese fusion cuisine delicately plated on rustic ceramic dish, dark wooden table, warm ambient restaurant lighting, high-end serene dining experience" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0QsCovJIcYCpPQGZ_4ETzTk2EjnqsktKN_x1LlE96BDIjouGu55nari-O8B8rw4Lg0K5LeOUfb0r8wYJWsC7_K72_Cw2QKD93l9dDQq2fpQsAgHWRNCHhZJe7x9nSe3Duqat6WbvacFuPZTz7kv0nagR6EOVgDgc48tahhAlI_uoTaDB95OLHRD6oUG2vMUS0D-07HZxCXLa9uVKCILiLnlQ84eHbA9D_LS4i1M8jTPgZvB5wH0gQ34DEVpr-gBvaLqCyMWY2i8Rg"/>
+<!-- Category Badge -->
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-md px-4 py-1.5 rounded-full font-label-md text-label-md text-primary">
+                        融合中餐
+                    </div>
+</div>
+<div class="p-gutter">
+<div class="flex justify-between items-start mb-unit">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">隐溪茶膳</h3>
+<span class="font-body-md text-body-md text-on-surface-variant">¥280/人</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">汲取在地时令食材，辅以清雅茶香入馔。</p>
+<!-- Atmospheric Divider -->
+<div class="w-full h-px bg-gradient-to-r from-outline-variant/50 to-transparent mb-4"></div>
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[18px] font-light" style="font-variation-settings: 'FILL' 0;">location_on</span>
+<span class="font-label-md text-label-md tracking-wider">小镇东区 · 临水长廊</span>
+</div>
+</div>
+</article>
+<!-- Card 2: Vegetarian -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(74,103,65,0.05)] border border-surface-container-low">
+<div class="relative w-full aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Healthy organic vegetarian salad bowl with fresh greens, nuts, and edible flowers, bright natural morning sunlight, light wood background, airy wellness aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD35wQRLEigxp9hPm3-02xdPIY0FGAL8DreZk8esbEU5c13g4BKptqhWkWnABbVpaSG6kvGS6z70XHKHitfZEC9mkXLPSMdT5YtF1179Uj_9iBzF2T22IHMuL0zkS74eZtDAomxDdgfk8nFVrWYtR76s2bSs78rbhDU9fZw0YwN35maOe2jybplu1Q7kEFqvkToUo-Cw8hecd5hlD5V2rEFIjIQsiBY_H1Jn5dWoq8fe3vq4PZ-ZLmlx5l7qrywccVH3DFh3iVv4CRl"/>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-md px-4 py-1.5 rounded-full font-label-md text-label-md text-primary">
+                        自然素食
+                    </div>
+</div>
+<div class="p-gutter">
+<div class="flex justify-between items-start mb-unit">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">青木素食</h3>
+<span class="font-body-md text-body-md text-on-surface-variant">¥160/人</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">回归本味，感受植物原生的轻盈能量。</p>
+<div class="w-full h-px bg-gradient-to-r from-outline-variant/50 to-transparent mb-4"></div>
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[18px] font-light" style="font-variation-settings: 'FILL' 0;">location_on</span>
+<span class="font-label-md text-label-md tracking-wider">森林之心 · 瑜伽馆旁</span>
+</div>
+</div>
+</article>
+<!-- Card 3: Western -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_10px_30px_rgba(74,103,65,0.05)] border border-surface-container-low">
+<div class="relative w-full aspect-[4/3] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Gourmet western dinner setting with wine glass, beautifully roasted vegetables, dim romantic lighting, rustic luxury atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhictVzR-9Vy-QhP0jXVknoGevFxw1PmIRYwkQAPQzLnsgC-IOGKJE1F-cvuuy9Kir9eMbtYCGUumCCnF-BnQJSGsvlZR5rtNtOCjewFYsAKKzMFQJJ5ISt8BE3NbhxTPksCiIoCxrawkC_E0yxoHaIIooutHuX3biWAA1SNirLarFYELKHOlpKQpiY0o1keS2SVKrppvWelOeo05kGJOQTaqJTmidzPmMcYuw3j62xqOd2fNkI8Hg4rOY60ZG-pFt6B1rHqnfHMnG"/>
+<div class="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur-md px-4 py-1.5 rounded-full font-label-md text-label-md text-primary">
+                        雅致西餐
+                    </div>
+</div>
+<div class="p-gutter">
+<div class="flex justify-between items-start mb-unit">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Lumina 露明那</h3>
+<span class="font-body-md text-body-md text-on-surface-variant">¥350/人</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">星空下的浪漫晚宴，地中海风情料理。</p>
+<div class="w-full h-px bg-gradient-to-r from-outline-variant/50 to-transparent mb-4"></div>
+<div class="flex items-center gap-2 text-outline">
+<span class="material-symbols-outlined text-[18px] font-light" style="font-variation-settings: 'FILL' 0;">location_on</span>
+<span class="font-label-md text-label-md tracking-wider">星空营地 · 观景台</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Bottom Page Spacer to avoid Nav Bar collision -->
+<div class="h-8"></div>
+</main>
+<!-- BottomNavBar Shared Component -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-3xl border-t border-stone-100 dark:border-stone-800 bg-white/90 dark:bg-stone-900/90 backdrop-blur-lg shadow-[0_-4px_20px_rgba(74,103,65,0.08)] flex justify-around items-center h-20 pb-safe px-8 md:hidden">
+<!-- Active Tab: 首页 (Home - assuming Restaurant List is part of the primary home exploration) -->
+<a class="flex flex-col items-center justify-center text-emerald-800 dark:text-emerald-300 font-semibold font-serif text-[11px] active:scale-95 transition-transform" href="#">
+<div class="scale-110 transition-all duration-300 ease-out mb-1">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">home_health</span>
+</div>
+<span>首页</span>
+</a>
+<!-- Inactive Tab: 订单 (Orders) -->
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 font-medium font-serif text-[11px] active:scale-95 transition-transform" href="#">
+<div class="mb-1">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 0;">receipt_long</span>
+</div>
+<span>订单</span>
+</a>
+<!-- Inactive Tab: 我的 (Mine) -->
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 font-medium font-serif text-[11px] active:scale-95 transition-transform" href="#">
+<div class="mb-1">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 0;">person_2</span>
+</div>
+<span>我的</span>
+</a>
+</nav>
+</body></html>

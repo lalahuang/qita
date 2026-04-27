@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>活动&amp;笔记</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Noto+Serif:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#f4f3f1",
+                        "outline-variant": "#c3c8bd",
+                        "tertiary-fixed": "#dde5da",
+                        "surface-variant": "#e3e2e0",
+                        "secondary-fixed": "#f8dfbf",
+                        "on-tertiary-fixed": "#161d17",
+                        "on-secondary-fixed-variant": "#55442d",
+                        "surface-bright": "#faf9f6",
+                        "primary-fixed-dim": "#afd0a1",
+                        "outline": "#73796f",
+                        "on-primary-fixed-variant": "#324e2a",
+                        "on-primary-fixed": "#062104",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e3e2e0",
+                        "secondary-fixed-dim": "#dbc3a4",
+                        "surface": "#faf9f6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#6e5b43",
+                        "on-tertiary-fixed-variant": "#414941",
+                        "on-background": "#1a1c1a",
+                        "inverse-primary": "#afd0a1",
+                        "secondary-container": "#f5dcbc",
+                        "on-secondary-container": "#726046",
+                        "surface-container-high": "#e9e8e5",
+                        "on-primary-container": "#c2e4b4",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "primary": "#334f2b",
+                        "on-secondary-fixed": "#261906",
+                        "surface-dim": "#dbdad7",
+                        "on-surface": "#1a1c1a",
+                        "inverse-on-surface": "#f2f1ee",
+                        "primary-container": "#4a6741",
+                        "surface-tint": "#496640",
+                        "primary-fixed": "#caecbc",
+                        "on-tertiary-container": "#d5ddd2",
+                        "on-surface-variant": "#434840",
+                        "inverse-surface": "#2f312f",
+                        "tertiary": "#424a42",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#c1c9be",
+                        "surface-container": "#efeeeb",
+                        "error": "#ba1a1a",
+                        "background": "#faf9f6",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#5a625a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem"
+                    },
+                    spacing: {
+                        "stack-lg": "48px",
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "stack-md": "24px",
+                        "margin-page": "24px",
+                        "stack-sm": "8px",
+                        "safe-top": "env(safe-area-inset-top)",
+                        "safe-bottom": "env(safe-area-inset-bottom)"
+                    },
+                    fontFamily: {
+                        "headline-sm": ["Noto Serif"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["Noto Serif"],
+                        "label-lg": ["Manrope"],
+                        "headline-md": ["Noto Serif"],
+                        "label-md": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    fontSize: {
+                        "headline-sm": ["20px", { lineHeight: "1.4", fontWeight: "500" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "400" }],
+                        "label-lg": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "400" }],
+                        "label-md": ["12px", { lineHeight: "1", letterSpacing: "0.03em", fontWeight: "500" }],
+                        "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface-container-low text-on-surface antialiased min-h-screen pb-safe-bottom">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-md border-b border-stone-100 dark:border-stone-800 shadow-sm shadow-emerald-900/5 transition-opacity duration-300">
+<div class="flex justify-between items-center px-6 h-16 w-full pt-safe-top">
+<div class="flex items-center gap-3"><button aria-label="Go back" class="p-1 -ml-1 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors flex items-center justify-center"><span class="material-symbols-outlined text-emerald-800 dark:text-emerald-400 text-[24px]">arrow_back</span></button>
+<span class="material-symbols-outlined text-emerald-800 dark:text-emerald-400" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<h1 class="text-xl font-bold text-emerald-900 dark:text-emerald-50 font-serif tracking-wide">
+                泰康养生小镇
+            </h1>
+<div class="w-6"></div> <!-- Spacer for center alignment -->
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-[calc(64px+env(safe-area-inset-top))]">
+<!-- Search Bar (Sticky) -->
+<div class="sticky top-[calc(64px+env(safe-area-inset-top))] z-40 bg-surface-container-low/95 backdrop-blur-sm border-b border-outline-variant/30 px-4 py-3">
+<div class="flex items-center w-full h-10 bg-surface-container-lowest rounded-full px-4 border border-outline-variant/30 shadow-sm focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px] mr-2">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-sm font-body-sm p-0 placeholder:text-outline-variant text-on-surface" placeholder="搜索笔记..." type="text"/>
+</div>
+</div>
+<!-- List Container -->
+<div class="px-4 py-4 columns-2 gap-3 space-y-3">
+<!-- Card 1: Note -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-outline-variant/20 break-inside-avoid inline-block w-full">
+<div class="relative aspect-[3/4] w-full">
+<img alt="冬日暖阳茶会" class="absolute inset-0 w-full h-full object-cover" data-alt="close up of a delicate ceramic tea set on a rustic wooden table, soft golden hour sunlight filtering through window, warm serene premium wellness resort atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABb7REJ_WJhlI8EqQ2uBXIir488rQtE3mXmcpIRvgeAa7Xt3i8EZ2Tuc03YYaMArLiipmYnKuNS9L7WmRDJdLKSZd3U_3fcB15JxykPZ7gG1ew0_mMaZuju-e7ELcmxIBko96GoT5CxTerwESAkTpqaRrllq1pTnVQqLhFNpDaj55_EiyhIGOOUS-iMIvLZ9qTdMys0EVD5PY3-Y1kw7zdPtgvFa1VPUQpCSqx5F1FICfM0N8IbpwhEKBAuY1gKfazEmGYhCCbqgDN"/>
+<!-- Tag -->
+<div class="absolute top-2 left-2 bg-surface/90 backdrop-blur text-on-surface px-2 py-1 rounded-full text-[10px] font-medium flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]">local_cafe</span>
+                        雅集
+                    </div>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h2 class="text-sm font-semibold text-on-surface line-clamp-2 leading-snug">
+                            冬日暖阳茶会 | 享受片刻的松弛与宁静
+                        </h2>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1.5">
+<img class="w-5 h-5 rounded-full bg-surface-variant object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbtHgWqYmGNEkAs9BhJutX2FoxLKXmgIpN3BVSV55SUwuhZP1lAX5pTd0SBEJv4qxnzOUZ8eQ4bfT02pch_usr7bMPn3RfYRFKvl6LC4xH7D8JsOHvmOEWuj2eXTdNd1jCowwsW1HHza_JZSlZssSqkF_YBCLymBaGd-0y_NEFMNMySYCcdfFszCqRyX94_rQgwaafTsE6fM1luRSKWr4-ZUmL46_CFxKuxuaYU6X7O-9QHDn0ljPBzUPzmwczms0ox2XxjcLiQ_pP"/>
+<span class="text-[11px] text-on-surface-variant truncate max-w-[60px]">茶艺师林岚</span>
+</div>
+<div class="flex items-center gap-0.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">favorite</span>
+<span class="text-[11px]">128</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2: Note -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-outline-variant/20 break-inside-avoid inline-block w-full">
+<div class="relative aspect-[4/5] w-full">
+<img alt="晨间森林疗愈漫步" class="absolute inset-0 w-full h-full object-cover" data-alt="group of mindful people walking on a scenic wooden boardwalk through a misty lush green ancient forest, early morning diffused light, peaceful restorative mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQv8wE4Dd1PrXu-zFu3PvBOwpC9gzTkZtIQM3-aRn-yCZajz-hi1l3p25aUSP86VvSaXkQXN5r8BS8R_k9pazp2OWHWSnSXSKeWtsDM1NuZj2uT66Pg5fOKRsT0MKMsPj7sdWk7Zgq_3sdBmo0Cbrp40E-3i-DDVGSbCJG6xAcxne7n8hssoAAaF34lZohAvZcVQMkvw5wwpRJjgEe2WU4HRuUkV8lstZCqwdmfMqF0bQ8CPbmw-Fz4k16AZWMqMQJl283NMqoKYby"/>
+<div class="absolute top-2 left-2 bg-surface/90 backdrop-blur text-on-surface px-2 py-1 rounded-full text-[10px] font-medium flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]">nature_people</span>
+                        自然
+                    </div>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h2 class="text-sm font-semibold text-on-surface line-clamp-2 leading-snug">
+                            晨间森林疗愈漫步 | 开启五感呼吸
+                        </h2>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1.5">
+<img class="w-5 h-5 rounded-full bg-surface-variant object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9mj9TSROjcwxab2bybW5Scaf0Akx45ZBmOVXM-QGPU9Tkr9X184ZI0r4MV1Wrkw12RQIYMTQDHAjhZyG6dE7X88M7W4HUFrOdEiVSjIcGUUqiWDF_nDy-lJxTjkay_2rGQuZYm8zNhAXnj1hMn32X43CR62WYCX9TzpOU7J99342uLLD2Mm3ACt-Mwpb2YVCYnQ9qL0IKzyfBmbec65ehY4way6e1D8vtT5Vtt5LS6eQ5MTJx74OKpiFQk0I7gFKzxrpZt9C-ReD0"/>
+<span class="text-[11px] text-on-surface-variant truncate max-w-[60px]">向导小飞</span>
+</div>
+<div class="flex items-center gap-0.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">favorite</span>
+<span class="text-[11px]">342</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 3: Note -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-outline-variant/20 break-inside-avoid inline-block w-full">
+<div class="relative aspect-[1/1] w-full">
+<img alt="颂钵音疗工坊回顾" class="absolute inset-0 w-full h-full object-cover" data-alt="minimalist yoga studio with pale wood floors, large bright window looking out to zen garden, soft natural daylight, calm focused minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ7hZ8YwcZqa2zekDM_KvDx1CiSpzUw33jTmEnXf2hwzeRT1LI44Woue1t0B-nL_TlJlcCtNPJ8mUfPq4bnKpLDiIaqI0B_923IuKAUYlebiy-iRbMGuzAIdvhmZ3Y1YsSRZONSR4vG0KYBrgQNiPFN13_Xrxh84Sazgwx6Mgnt47wrqpHMt5YihpVgvBJdhbS25OeFfWj3sriu5YG_6MqTe9g5D3RteksuTvfr5iqMU3EVmCW_pRlghuncAzcjbUbBd6Sq75BSRay"/>
+<div class="absolute top-2 left-2 bg-surface/90 backdrop-blur text-on-surface px-2 py-1 rounded-full text-[10px] font-medium flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]">history</span>
+                        回顾
+                    </div>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h2 class="text-sm font-semibold text-on-surface line-clamp-2 leading-snug">
+                            寻回内心的共鸣：颂钵音疗工坊体验
+                        </h2>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1.5">
+<img class="w-5 h-5 rounded-full bg-surface-variant object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOaLXV5m1C1CRR0EBdqqkmIdn-5RygMxG5DCt_du0kFZCcGP3-zFLKKHaLe3BTtvD4e9om7g0ta6_aSSvLUlYfCFrR7I6ZGRqBPM0nCTth2cPJK39zgK5TxavAr9UddUxxvb8qWM44L3vZh-VEXmd8h1AMWTVQqQm9M8mlfwBnT3Plu6GEE0j7SFy4pE-588PCNIJLYzruUMDA9k4iPty-_qNRAr3phwkjx1Yj5pDdJf7SlZixvHFb6dT_6aj0vHGVJ1Ufieqv_NQ5"/>
+<span class="text-[11px] text-on-surface-variant truncate max-w-[60px]">音疗师Anna</span>
+</div>
+<div class="flex items-center gap-0.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">favorite</span>
+<span class="text-[11px]">89</span>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 4: Note -->
+<article class="bg-surface-container-lowest rounded-2xl overflow-hidden shadow-sm border border-outline-variant/20 break-inside-avoid inline-block w-full">
+<div class="relative aspect-[3/4] w-full">
+<img alt="周末瑜伽营" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXU_7ePG2YT9o64xdzOv7cDzDesSTj8u1Vww2Bbw-N-OYcyhKeV59YUtf0J5kL4ehsQpKinZsIwX0EoAigmWdPuatFdjsTk7mQEBLwDk14Z5srySfZzse_Y1EAjLEWkOepaaTguacplFSTsT2u5vKi5ghc1mbl-Z9IhT1FXAHDkAxj7bzX-mTGpykkz1AZBDY09mc6J7QgxOHo99x_pMKpxynxcVb_a6oZfdbn8k9-p6faeZsoN8K5cU02kAAboK2Dd1c0C-iOxpSa"/>
+<div class="absolute top-2 left-2 bg-surface/90 backdrop-blur text-on-surface px-2 py-1 rounded-full text-[10px] font-medium flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[12px]">self_improvement</span>
+                        运动
+                    </div>
+</div>
+<div class="p-3 flex flex-col gap-2">
+<h2 class="text-sm font-semibold text-on-surface line-clamp-2 leading-snug">
+                            周末瑜伽营 | 唤醒身体的每一寸肌肤
+                        </h2>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1.5">
+<img class="w-5 h-5 rounded-full bg-surface-variant object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyZN7Qhk_xnZfNsSQLZgdul8bwv57GRHOCtGXDVWz8KxFiBAeHe5di_bvpQxNPXL2giTJT5yUKYrVNfhrMaFvonccQbwEOyZL9AHIXQCMhFN7vMEBG2jVaXySa5P5IM1aTituviAXeDK0_6_xSyul2cGjBYoqq3hqg7rJb8CXJXJZ8sadwVCmPvyFRdcbRD2Rj8Ghdv6wLLP6kkjtDDFMM9y6y77bv_98frt-vl6Mqhb4bUGRYMCQVvXU4XgDa8PrliaVJbkBIufA7"/>
+<span class="text-[11px] text-on-surface-variant truncate max-w-[60px]">瑜伽教练Sarah</span>
+</div>
+<div class="flex items-center gap-0.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">favorite</span>
+<span class="text-[11px]">256</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- End of List Indicator -->
+<div class="pb-12 pt-4 flex justify-center items-center gap-2 text-outline-variant font-label-md text-label-md">
+<div class="h-px w-8 bg-outline-variant/30"></div>
+<span>没有更多内容了</span>
+<div class="h-px w-8 bg-outline-variant/30"></div>
+</div>
+</main>
+</body></html>

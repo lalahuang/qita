@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>预约疗养 - 祺泰康养小镇</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f4f3f1",
+                      "outline-variant": "#c3c8bd",
+                      "tertiary-fixed": "#dde5da",
+                      "surface-variant": "#e3e2e0",
+                      "secondary-fixed": "#f8dfbf",
+                      "on-tertiary-fixed": "#161d17",
+                      "on-secondary-fixed-variant": "#55442d",
+                      "surface-bright": "#faf9f6",
+                      "primary-fixed-dim": "#afd0a1",
+                      "outline": "#73796f",
+                      "on-primary-fixed-variant": "#324e2a",
+                      "on-primary-fixed": "#062104",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e3e2e0",
+                      "secondary-fixed-dim": "#dbc3a4",
+                      "surface": "#faf9f6",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#6e5b43",
+                      "on-tertiary-fixed-variant": "#414941",
+                      "on-background": "#1a1c1a",
+                      "inverse-primary": "#afd0a1",
+                      "secondary-container": "#f5dcbc",
+                      "on-secondary-container": "#726046",
+                      "surface-container-high": "#e9e8e5",
+                      "on-primary-container": "#c2e4b4",
+                      "on-error-container": "#93000a",
+                      "on-primary": "#ffffff",
+                      "primary": "#4a6741",
+                      "on-secondary-fixed": "#261906",
+                      "surface-dim": "#dbdad7",
+                      "on-surface": "#1a1c1a",
+                      "inverse-on-surface": "#f2f1ee",
+                      "primary-container": "#caecbc",
+                      "surface-tint": "#4a6741",
+                      "primary-fixed": "#caecbc",
+                      "on-tertiary-container": "#d5ddd2",
+                      "on-surface-variant": "#434840",
+                      "inverse-surface": "#2f312f",
+                      "tertiary": "#424a42",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#c1c9be",
+                      "surface-container": "#efeeeb",
+                      "error": "#ba1a1a",
+                      "background": "#fdfcf9",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#5a625a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-lg": "48px",
+                      "gutter": "16px",
+                      "unit": "4px",
+                      "stack-md": "24px",
+                      "margin-page": "24px",
+                      "stack-sm": "8px"
+              },
+              "fontFamily": {
+                      "headline-sm": ["Noto Serif"],
+                      "body-lg": ["Manrope"],
+                      "headline-lg": ["Noto Serif"],
+                      "label-lg": ["Manrope"],
+                      "headline-md": ["Noto Serif"],
+                      "label-md": ["Manrope"],
+                      "body-sm": ["Manrope"],
+                      "body-md": ["Manrope"]
+              },
+              "fontSize": {
+                      "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                      "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                      "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                      "label-lg": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                      "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                      "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.03em", "fontWeight": "500" }],
+                      "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                      "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar (from JSON) -->
+<header class="bg-white/80 dark:bg-stone-900/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-stone-100 dark:border-stone-800 shadow-sm shadow-emerald-900/5 transition-opacity duration-300 flex justify-between items-center h-16 w-full px-4"><button class="text-stone-600 dark:text-stone-400 hover:opacity-70 transition-opacity duration-300 flex items-center justify-center -ml-2 p-2">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-800 dark:text-emerald-400" style="font-variation-settings: 'FILL' 1;">spa</span>
+<span class="text-xl font-bold text-emerald-900 dark:text-emerald-50 font-serif tracking-wide">祺泰康养小镇</span>
+</div>
+<button class="text-stone-400 dark:text-stone-500 hover:opacity-80 transition-opacity duration-300">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</header>
+<main class="pt-16 pb-[140px] min-h-screen flex flex-col">
+<!-- Atmospheric Hero Section -->
+<div class="h-[200px] w-full relative overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Serene massage therapy room with natural wood elements, soft glowing candles, and neatly folded white towels, exuding a peaceful and relaxing atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqld91cJbuv0FUJM6dJ1DkVKDBh5zLUf_j8e32aCtECon0mmNGvK4Fti8g9qP0wcgie3LNfZSwggpGLFtdQrQ7Es1AAOUbzGcXhg1iKVPoeSHeJn9lZ_xWfhu7HFaUuwZ6Jr-RRKObXQu3F_0KgxEWSyUZOH2C2PJrxoZUiY_wPbpXAADlSCqjse1xQpVKjzqzHeafYtDu6Q9-dd8upW5QLZPT1esmxE_NUIlfdGM5OVohuu8cbJdLiWmnUH4C2NeS2Y4mzuo6Yc7t"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 px-margin-page pb-stack-md w-full">
+<h1 class="font-headline-lg text-headline-lg text-on-background">预约疗养</h1>
+<p class="font-body-md text-body-md text-outline mt-1">留出一段时光，归于平静</p>
+</div>
+</div>
+<!-- Date Selector Section -->
+<section class="mt-stack-sm">
+<div class="px-margin-page mb-stack-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-background">选择日期</h2>
+</div>
+<!-- Horizontal scrollable dates -->
+<div class="flex overflow-x-auto gap-4 px-margin-page pb-4 hide-scrollbar snap-x">
+<!-- Selected Date -->
+<button class="snap-start flex-shrink-0 flex flex-col items-center justify-center p-4 rounded-2xl bg-primary text-on-primary w-[72px] h-[88px] transition-colors shadow-[0_8px_20px_rgba(74,103,65,0.15)] active:scale-95">
+<span class="font-label-md text-label-md opacity-80 mb-1">今日</span>
+<span class="font-headline-md text-headline-md font-medium">12</span>
+</button>
+<!-- Available Dates -->
+<button class="snap-start flex-shrink-0 flex flex-col items-center justify-center p-4 rounded-2xl border border-surface-variant bg-surface-container-lowest w-[72px] h-[88px] transition-colors active:bg-surface-container-low hover:border-outline">
+<span class="font-label-md text-label-md text-on-surface-variant mb-1">周五</span>
+<span class="font-headline-md text-headline-md text-on-surface">13</span>
+</button>
+<button class="snap-start flex-shrink-0 flex flex-col items-center justify-center p-4 rounded-2xl border border-surface-variant bg-surface-container-lowest w-[72px] h-[88px] transition-colors active:bg-surface-container-low hover:border-outline">
+<span class="font-label-md text-label-md text-on-surface-variant mb-1">周六</span>
+<span class="font-headline-md text-headline-md text-on-surface">14</span>
+</button>
+<button class="snap-start flex-shrink-0 flex flex-col items-center justify-center p-4 rounded-2xl border border-surface-variant bg-surface-container-lowest w-[72px] h-[88px] transition-colors active:bg-surface-container-low hover:border-outline">
+<span class="font-label-md text-label-md text-on-surface-variant mb-1">周日</span>
+<span class="font-headline-md text-headline-md text-on-surface">15</span>
+</button>
+<button class="snap-start flex-shrink-0 flex flex-col items-center justify-center p-4 rounded-2xl border border-surface-variant bg-surface-container-lowest w-[72px] h-[88px] transition-colors active:bg-surface-container-low hover:border-outline">
+<span class="font-label-md text-label-md text-on-surface-variant mb-1">周一</span>
+<span class="font-headline-md text-headline-md text-on-surface">16</span>
+</button>
+<!-- Spacer for scrolling -->
+<div class="shrink-0 w-2"></div>
+</div>
+</section>
+<!-- Divider -->
+<div class="px-margin-page my-stack-sm">
+<div class="h-px w-full bg-gradient-to-r from-transparent via-surface-variant to-transparent"></div>
+</div>
+<!-- Time Slot Section -->
+<section class="px-margin-page flex-grow">
+<div class="flex justify-between items-end mb-stack-md">
+<h2 class="font-headline-sm text-headline-sm text-on-background">选择时段</h2>
+<!-- Legend -->
+<div class="flex gap-4">
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full border border-outline-variant bg-surface"></div>
+<span class="font-label-md text-label-md text-outline">可约</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+<span class="font-label-md text-label-md text-outline">已选</span>
+</div>
+<div class="flex items-center gap-1.5">
+<div class="w-2 h-2 rounded-full bg-surface-variant"></div>
+<span class="font-label-md text-label-md text-outline">约满</span>
+</div>
+</div>
+</div>
+<!-- Time Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-gutter">
+<!-- Full Slot -->
+<button class="flex flex-col items-center justify-center py-4 px-2 rounded-xl bg-surface-container-low border border-transparent opacity-50 cursor-not-allowed">
+<span class="font-body-lg text-[16px] md:text-body-lg text-on-surface-variant line-through decoration-outline/40">09:00 - 10:00</span>
+<span class="font-label-md text-label-md text-outline mt-1">已满</span>
+</button>
+<!-- Available Slot -->
+<button class="flex flex-col items-center justify-center py-4 px-2 rounded-xl border border-surface-variant bg-surface-container-lowest transition-colors active:bg-surface-container-low text-on-surface-variant hover:border-outline">
+<span class="font-body-lg text-[16px] md:text-body-lg text-on-surface">10:00 - 11:00</span>
+<span class="font-label-md text-label-md text-primary mt-1 opacity-0">可选</span>
+</button>
+<!-- Selected Slot -->
+<button class="flex flex-col items-center justify-center py-4 px-2 rounded-xl bg-primary text-on-primary transition-all shadow-[0_4px_12px_rgba(74,103,65,0.2)] active:scale-95 relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-[#324e2a] text-on-primary rounded-bl-lg px-1.5 py-0.5">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-body-lg text-[16px] md:text-body-lg text-on-primary font-medium">11:00 - 12:00</span>
+<span class="font-label-md text-label-md text-on-primary mt-1 opacity-90">已选</span>
+</button>
+<!-- Available Slot -->
+<button class="flex flex-col items-center justify-center py-4 px-2 rounded-xl border border-surface-variant bg-surface-container-lowest transition-colors active:bg-surface-container-low text-on-surface-variant hover:border-outline">
+<span class="font-body-lg text-[16px] md:text-body-lg text-on-surface">14:00 - 15:00</span>
+</button>
+<!-- Available Slot -->
+<button class="flex flex-col items-center justify-center py-4 px-2 rounded-xl border border-surface-variant bg-surface-container-lowest transition-colors active:bg-surface-container-low text-on-surface-variant hover:border-outline">
+<span class="font-body-lg text-[16px] md:text-body-lg text-on-surface">15:00 - 16:00</span>
+</button>
+<!-- Full Slot -->
+<button class="flex flex-col items-center justify-center py-4 px-2 rounded-xl bg-surface-container-low border border-transparent opacity-50 cursor-not-allowed">
+<span class="font-body-lg text-[16px] md:text-body-lg text-on-surface-variant line-through decoration-outline/40">16:00 - 17:00</span>
+<span class="font-label-md text-label-md text-outline mt-1">已满</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom Booking Action -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest/95 backdrop-blur-md border-t border-surface-variant px-margin-page pt-5 pb-[calc(20px+env(safe-area-inset-bottom))] z-40 shadow-[0_-10px_40px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-center max-w-lg mx-auto gap-4">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-baseline gap-1">
+<span class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">¥398</span>
+</div>
+<div class="flex items-center text-body-sm text-on-surface-variant">
+<span class="font-medium text-on-background">11:00 - 12:00</span>
+<span class="mx-1.5 w-1 h-1 rounded-full bg-outline-variant"></span>
+<span>60分钟</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary font-label-lg text-label-lg px-8 py-3.5 rounded-full flex items-center justify-center gap-2 shadow-[0_8px_16px_rgba(74,103,65,0.2)] transition-transform active:scale-95 hover:bg-primary/90 shrink-0">
+                确认预约
+                <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</body></html>

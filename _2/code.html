@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>祺泰康养小镇 - 首页</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Noto+Serif:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f4f3f1",
+                        "outline-variant": "#c3c8bd",
+                        "tertiary-fixed": "#dde5da",
+                        "surface-variant": "#e3e2e0",
+                        "secondary-fixed": "#f8dfbf",
+                        "on-tertiary-fixed": "#161d17",
+                        "on-secondary-fixed-variant": "#55442d",
+                        "surface-bright": "#faf9f6",
+                        "primary-fixed-dim": "#afd0a1",
+                        "outline": "#73796f",
+                        "on-primary-fixed-variant": "#324e2a",
+                        "on-primary-fixed": "#062104",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e3e2e0",
+                        "secondary-fixed-dim": "#dbc3a4",
+                        "surface": "#faf9f6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#6e5b43",
+                        "on-tertiary-fixed-variant": "#414941",
+                        "on-background": "#1a1c1a",
+                        "inverse-primary": "#afd0a1",
+                        "secondary-container": "#f5dcbc",
+                        "on-secondary-container": "#726046",
+                        "surface-container-high": "#e9e8e5",
+                        "on-primary-container": "#c2e4b4",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "primary": "#334f2b",
+                        "on-secondary-fixed": "#261906",
+                        "surface-dim": "#dbdad7",
+                        "on-surface": "#1a1c1a",
+                        "inverse-on-surface": "#f2f1ee",
+                        "primary-container": "#4a6741",
+                        "surface-tint": "#496640",
+                        "primary-fixed": "#caecbc",
+                        "on-tertiary-container": "#d5ddd2",
+                        "on-surface-variant": "#434840",
+                        "inverse-surface": "#2f312f",
+                        "tertiary": "#424a42",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#c1c9be",
+                        "surface-container": "#efeeeb",
+                        "error": "#ba1a1a",
+                        "background": "#faf9f6",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#5a625a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "48px",
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "stack-md": "24px",
+                        "margin-page": "24px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Noto Serif"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["Noto Serif"],
+                        "label-lg": ["Manrope"],
+                        "headline-md": ["Noto Serif"],
+                        "label-md": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "label-lg": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.03em", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-md border-b border-stone-100 dark:border-stone-800 shadow-sm shadow-emerald-900/5 transition-opacity duration-300">
+<div class="flex justify-between items-center px-3 h-16 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-800 dark:text-emerald-400">spa</span>
+<span class="text-xl font-bold text-emerald-900 dark:text-emerald-50 font-serif tracking-wide">祺泰康养小镇</span>
+</div>
+<div></div>
+</div>
+</header>
+<main class="pt-16 pb-24">
+<!-- Hero Banner Area -->
+<section class="relative w-full h-80 mb-6">
+<div class="absolute inset-0 bg-surface-container-low">
+<img alt="Beautiful landscape of a serene forest sanctuary with mist rolling over the mountains in the early morning light" class="w-full h-full object-cover object-center" data-alt="Beautiful landscape of a serene forest sanctuary with mist rolling over the mountains in the early morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBfkiHBAJQdQ3PyIqi3j2OrIOF9vvQ-kjX8ASjw4vtuvBA0OPDM_nFXmmUnQUoLidBlUyXfZkx6cZPLwzhHluqG_i5qBvUnJCcRzpagN-QJiPabW1Ne1RVVmqlV3tTC3_KlliRV1JL7Euic7Ku_mrBierqXIkYPYa2Kd-pGPAQ_v1W9vYP9qPtacOxsqBVUyEMR_U1W0kBqLv6p6MVpngMGwEAIWTnknuWSDlY_g1Oc3CnuDTiITAfky3JDSQ3qyFVekxoWbReCsR-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 px-3 py-6 w-full text-center">
+<h1 class="font-headline-lg text-headline-lg text-on-surface mb-stack-sm drop-shadow-sm">回归自然，找回内心的宁静</h1>
+<p class="font-body-md text-body-md text-on-surface-variant drop-shadow-sm">体验沉浸式的森林康养之旅</p>
+</div>
+</section>
+<!-- Core Services Grid -->
+<section class="px-2 mb-6">
+<div class="grid grid-cols-3 gap-y-5 gap-x-2">
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors shadow-[0_10px_30px_rgba(74,103,65,0.05)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_walk</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">游玩预约</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors shadow-[0_10px_30px_rgba(74,103,65,0.05)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">hotel</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">酒店预订</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors shadow-[0_10px_30px_rgba(74,103,65,0.05)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">特色餐厅</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors shadow-[0_10px_30px_rgba(74,103,65,0.05)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">self_improvement</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">疗养课程</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors shadow-[0_10px_30px_rgba(74,103,65,0.05)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">airport_shuttle</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">接驳服务</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-14 h-14 rounded-full bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors shadow-[0_10px_30px_rgba(74,103,65,0.05)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">event</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">主题活动</span>
+</button>
+</div>
+</section>
+<!-- Divider -->
+<div class="w-full flex justify-center mb-6">
+<div class="h-px bg-gradient-to-r from-transparent via-secondary to-transparent w-3/4 opacity-30"></div>
+</div>
+<!-- Recommended Activities & Notes -->
+<section class="px-2">
+<div class="flex justify-between items-end mb-4 px-1">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-unit">精选笔记</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">发现小镇的独特魅力</p>
+</div>
+</div>
+<div class="columns-2 gap-2 space-y-2">
+<!-- Card 1 -->
+<a class="block bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.03)] break-inside-avoid group" href="#">
+<div class="w-full bg-surface-variant relative aspect-[3/4]">
+<img alt="Person doing yoga in a peaceful outdoor setting surrounded by trees" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Person doing yoga in a peaceful outdoor setting surrounded by trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr3GbwpH1I_AcvI25SM3i-RYDWOufvTPU1niU5-i0hqV-2fHpBeqB6DP4rWLHdzX0IEeIbU5u9qVBiD0JqZ8HLS7Z9k6SGKaha2xujJfotc7i8gPXQwXJ80UfCBkHT4da-_DBAXae0pVY4nQrtj_sdtGEDsw1DwQWKcILJviLHvSKZRphSDCGZNIDx14rKiUwz7_jD-Is0Z-xky3zgBj-I3hHoclp0nErljFSz9xAzJqFmX5O1f9-TIK1bApe_y4Per-wyz8nfVhSH"/>
+</div>
+<div class="p-3">
+<h3 class="font-body-sm text-[13px] font-medium text-on-surface mb-2 line-clamp-2 leading-relaxed">晨曦瑜伽：唤醒身体的活力，感受自然的力量</h3>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="block bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.03)] break-inside-avoid group" href="#">
+<div class="w-full bg-surface-variant relative aspect-square">
+<img alt="Sunlight filtering through a dense green forest, creating a calm and meditative atmosphere" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sunlight filtering through a dense green forest, creating a calm and meditative atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVMrPEWFiibCu9biQ8e8UN3iPzu8NOKRpkM1Hd2SnjRdRHwK4u9RUkElFlADTLD5rNPvCxnGF-hzLGqAGnr6GHnTz-CgW8QQPvzZf10-O-JSSBPpjaDSLPXRwXCqzSSkBGR2dyYzIc6Yh6oIVA2uMr6UiatIR32kVLT2cDwFLKA0JMvuW4uku4W43V6jxDMK-X6TG0p3US4eUsZlJQP1kAXwXR-hB0Z2wbKdViXGRx2kuJHB1e0FK6NGepS9kOX-DS4IMgNMCtrWiz"/>
+</div>
+<div class="p-3">
+<h3 class="font-body-sm text-[13px] font-medium text-on-surface mb-2 line-clamp-2 leading-relaxed">林间冥想：聆听风的声音，寻找久违的宁静</h3>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="block bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.03)] break-inside-avoid group" href="#">
+<div class="w-full bg-surface-variant relative aspect-[4/5]">
+<img alt="Healthy organic meal beautifully presented on a wooden table" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMLS6nwzOC9esHqi1rma4nUHm_Nm3pzJurUsozWNmrMOSozWqMOj4uaLAj-Nxt3EfQGVZ_YdxW0I6kQzPQG9OOLBCoKNlU_W3whGeaxttcdbMUSou4nl4oER5OeFeUC_Zgy64QTbObEWPjAJbKbjlQq6wx08MIXEkFsFAQlOE2ZENL6LL6ZjlCE_icI9KF6EFJzbvHYYcPMrsNxz0V-ME7IRNlsy4kYowr6ofVdGY6QX1kn8CYf8uA_FKlkGD3GCjmieQk6oyNKtZT"/>
+</div>
+<div class="p-3">
+<h3 class="font-body-sm text-[13px] font-medium text-on-surface mb-2 line-clamp-2 leading-relaxed">小镇必吃榜：有机轻食，让身体零负担</h3>
+</div>
+</a>
+<!-- Card 4 -->
+<a class="block bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.03)] break-inside-avoid group" href="#">
+<div class="w-full bg-surface-variant relative aspect-[3/4]">
+<img alt="Cozy cabin interior with a view of the forest" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZteYgSw3VC1DjZQgcRkYfzwSZY7a0YsKCWK2RkkyTPTdykM4ZlTCAHYBOEw1K1GqcUWOt9-EzrVaeN2nBxLuTTlfFgI9vu7YUTWx-cLZmtm9eXb5Ni0ilD79BPSftsBmz4ePXEyHe3lkQPUQOvj_m0lOBBQjTdQk1vew_ZUImJIsXw3vmAZYRotkPgUvlKpjlz1qcytWQOSfaahLA4tfKljo_N9NFOqTIxdqPVzE7nrMb34J1w6-EPHE8vLGGUfvMwvjFE6H57RtC"/>
+</div>
+<div class="p-3">
+<h3 class="font-body-sm text-[13px] font-medium text-on-surface mb-2 line-clamp-2 leading-relaxed">住进森林里：全景木屋初体验，推窗即是风景</h3>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-3xl border-t border-stone-100 dark:border-stone-800 bg-white/90 dark:bg-stone-900/90 backdrop-blur-lg shadow-[0_-4px_20px_rgba(74,103,65,0.08)] md:hidden">
+<div class="flex justify-around items-center h-20 pb-safe px-2">
+<a class="flex flex-col items-center justify-center text-emerald-800 dark:text-emerald-300 font-semibold active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home_health</span>
+<span class="font-serif text-[11px] font-medium">首页</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">receipt_long</span>
+<span class="font-serif text-[11px] font-medium">订单</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mb-1">person_2</span>
+<span class="font-serif text-[11px] font-medium">我的</span>
+</a>
+</div>
+</nav>
+</body></html>

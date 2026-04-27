@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>提交订单</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Noto+Serif:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: 300;
+            font-style: normal;
+            font-size: 24px;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            -moz-osx-font-smoothing: grayscale;
+            font-feature-settings: 'liga';
+        }
+        
+        /* Custom toggle switch styling based on theme colors */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #334f2b; /* primary */
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #334f2b; /* primary */
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#f4f3f1",
+                        "outline-variant": "#c3c8bd",
+                        "tertiary-fixed": "#dde5da",
+                        "surface-variant": "#e3e2e0",
+                        "secondary-fixed": "#f8dfbf",
+                        "on-tertiary-fixed": "#161d17",
+                        "on-secondary-fixed-variant": "#55442d",
+                        "surface-bright": "#faf9f6",
+                        "primary-fixed-dim": "#afd0a1",
+                        "outline": "#73796f",
+                        "on-primary-fixed-variant": "#324e2a",
+                        "on-primary-fixed": "#062104",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e3e2e0",
+                        "secondary-fixed-dim": "#dbc3a4",
+                        "surface": "#faf9f6",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#6e5b43",
+                        "on-tertiary-fixed-variant": "#414941",
+                        "on-background": "#1a1c1a",
+                        "inverse-primary": "#afd0a1",
+                        "secondary-container": "#f5dcbc",
+                        "on-secondary-container": "#726046",
+                        "surface-container-high": "#e9e8e5",
+                        "on-primary-container": "#c2e4b4",
+                        "on-error-container": "#93000a",
+                        "on-primary": "#ffffff",
+                        "primary": "#334f2b",
+                        "on-secondary-fixed": "#261906",
+                        "surface-dim": "#dbdad7",
+                        "on-surface": "#1a1c1a",
+                        "inverse-on-surface": "#f2f1ee",
+                        "primary-container": "#4a6741",
+                        "surface-tint": "#496640",
+                        "primary-fixed": "#caecbc",
+                        "on-tertiary-container": "#d5ddd2",
+                        "on-surface-variant": "#434840",
+                        "inverse-surface": "#2f312f",
+                        "tertiary": "#424a42",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#c1c9be",
+                        "surface-container": "#efeeeb",
+                        "error": "#ba1a1a",
+                        "background": "#faf9f6",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#5a625a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "stack-lg": "48px",
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "stack-md": "24px",
+                        "margin-page": "24px",
+                        "stack-sm": "8px"
+                    },
+                    fontFamily: {
+                        "headline-sm": ["Noto Serif"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["Noto Serif"],
+                        "label-lg": ["Manrope"],
+                        "headline-md": ["Noto Serif"],
+                        "label-md": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    fontSize: {
+                        "headline-sm": ["20px", { lineHeight: "1.4", fontWeight: "500" }],
+                        "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+                        "headline-lg": ["32px", { lineHeight: "1.2", fontWeight: "400" }],
+                        "label-lg": ["14px", { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "400" }],
+                        "label-md": ["12px", { lineHeight: "1", letterSpacing: "0.03em", fontWeight: "500" }],
+                        "body-sm": ["14px", { lineHeight: "1.5", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-low text-on-surface font-body-md antialiased pb-32">
+<!-- Header (Custom for Subpage/Checkout) -->
+<header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md h-16 flex items-center px-margin-page w-full border-b border-surface-container-high">
+<button class="text-on-surface flex items-center justify-center p-2 -ml-2 rounded-full active:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[24px]">arrow_back</span>
+</button>
+<h1 class="flex-1 text-center font-headline-sm text-headline-sm text-on-surface pr-8">提交订单</h1>
+</header>
+<main class="p-margin-page space-y-stack-md">
+<!-- Order Summary Card -->
+<section class="bg-surface-container-lowest rounded-xl p-gutter shadow-[0_10px_30px_rgba(51,79,43,0.03)] border border-surface-container-highest flex gap-gutter">
+<div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img alt="Resort Room" class="w-full h-full object-cover" data-alt="warm inviting luxury wooden spa resort room with large windows facing a lush green mountain valley soft natural lighting minimal decor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSstBbR1IkrHZIElTbsxubMPJwkonhVxLm4mPAL9IK-UHvErR6Ms9c7WjZGWyMhzuc3MwGGIxv0ccWGJAwS7EgUyedTolI7j-iSw8cNsm3_a3i7kTMUGVpWpadWkY-RG65UyCJyy4GOIGZ_vCCHr5Vpg3mx8U8OUUSxhGS5M5od5-93aaZAvlxCRcn_ZIUlKKTKuJsUe9SJ3UB8hQPB0CCoEz5ltLJ0J-gQAIjOsvMGdowy1MpaeLYRHXkg7KBdlISsGpNs3lBw2--"/>
+</div>
+<div class="flex flex-col justify-between py-1">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-1">山林静谧大床房</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-outline">bed</span>
+                        1张特大床 | 含双早
+                    </p>
+</div>
+<div class="bg-surface-container-low rounded-md px-3 py-2 mt-2 inline-flex items-center gap-2 w-fit">
+<span class="font-label-md text-label-md text-on-surface-variant">10月24日</span>
+<span class="w-4 h-[1px] bg-outline-variant"></span>
+<span class="font-label-md text-label-md text-on-surface-variant">10月25日</span>
+<span class="font-label-md text-label-md text-primary ml-2 bg-primary-fixed-dim/20 px-2 py-0.5 rounded">1晚</span>
+</div>
+</div>
+</section>
+<!-- Guest Information Form -->
+<section class="bg-surface-container-lowest rounded-xl px-gutter shadow-[0_10px_30px_rgba(51,79,43,0.03)] border border-surface-container-highest">
+<div class="flex items-center justify-between py-5 border-b border-surface-container-high">
+<label class="text-on-surface-variant font-label-md text-label-md flex items-center gap-2 w-24 flex-shrink-0">
+<span class="material-symbols-outlined text-[18px] text-outline">person</span>
+                    入住人
+                </label>
+<input class="flex-1 text-right bg-transparent border-none p-0 font-body-md text-body-md text-on-surface focus:ring-0 placeholder:text-outline-variant" placeholder="需填1人姓名" type="text"/>
+<button class="ml-3 text-primary flex items-center justify-center p-1 rounded-full active:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">contact_page</span>
+</button>
+</div>
+<div class="flex items-center justify-between py-5 border-b border-surface-container-high">
+<label class="text-on-surface-variant font-label-md text-label-md flex items-center gap-2 w-24 flex-shrink-0">
+<span class="material-symbols-outlined text-[18px] text-outline">call</span>
+                    联系电话
+                </label>
+<input class="flex-1 text-right bg-transparent border-none p-0 font-body-md text-body-md text-on-surface focus:ring-0 placeholder:text-outline-variant" placeholder="用于接收预订短信" type="tel"/>
+</div>
+<div class="flex items-center justify-between py-5 border-b border-surface-container-high">
+<label class="text-on-surface-variant font-label-md text-label-md flex items-center gap-2 w-28 flex-shrink-0">
+<span class="material-symbols-outlined text-[18px] text-outline">schedule</span>
+                    预计到店
+                </label>
+<div class="flex-1 flex items-center justify-end gap-1 cursor-pointer">
+<span class="font-body-md text-body-md text-on-surface">14:00 - 18:00</span>
+<span class="material-symbols-outlined text-[20px] text-outline-variant">chevron_right</span>
+</div>
+</div>
+<div class="flex items-start justify-between py-5">
+<label class="text-on-surface-variant font-label-md text-label-md flex items-center gap-2 w-24 flex-shrink-0 pt-1">
+<span class="material-symbols-outlined text-[18px] text-outline">edit_note</span>
+                    特殊要求
+                </label>
+<textarea class="flex-1 text-right bg-transparent border-none p-0 font-body-md text-body-md text-on-surface focus:ring-0 placeholder:text-outline-variant resize-none" placeholder="对床型、楼层等偏好要求" rows="2"></textarea>
+</div>
+</section>
+<!-- Extra Options -->
+<section class="bg-surface-container-lowest rounded-xl px-gutter shadow-[0_10px_30px_rgba(51,79,43,0.03)] border border-surface-container-highest">
+<div class="flex items-center justify-between py-5">
+<label class="text-on-surface-variant font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">receipt_long</span>
+                    开具发票
+                </label>
+<!-- Toggle Switch -->
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 border-surface-container-highest appearance-none cursor-pointer transition-all duration-300 ease-in-out z-10 top-[2px] left-[2px] shadow-sm" id="invoice_toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-7 rounded-full bg-surface-container-highest cursor-pointer transition-colors duration-300 ease-in-out" for="invoice_toggle"></label>
+</div>
+</div>
+</section>
+<p class="font-body-sm text-body-sm text-outline text-center mt-stack-md pt-stack-sm pb-8">
+            点击提交订单即表示您同意 <a class="text-primary underline underline-offset-2" href="#">酒店预订服务条款</a>
+</p>
+</main>
+<!-- Bottom Action Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-surface-container-highest px-margin-page py-4 pb-[calc(1rem+env(safe-area-inset-bottom))] flex justify-between items-center z-50 shadow-[0_-10px_30px_rgba(51,79,43,0.05)]">
+<div class="flex flex-col">
+<span class="font-label-sm text-[11px] text-on-surface-variant mb-0.5">总金额</span>
+<div class="flex items-baseline gap-1 text-primary">
+<span class="font-body-md text-body-md font-medium">¥</span>
+<span class="font-headline-md text-headline-md">1,288</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary rounded-lg px-8 py-3.5 font-label-lg text-label-lg shadow-sm shadow-primary/20 active:scale-95 transition-transform">
+            提交订单
+        </button>
+</div>
+</body></html>

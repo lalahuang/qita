@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>森林呼吸疗愈 - Serenity Wellness</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f4f3f1",
+                    "on-surface-variant": "#434840",
+                    "tertiary": "#424a42",
+                    "on-primary-fixed-variant": "#324e2a",
+                    "surface-bright": "#faf9f6",
+                    "secondary-fixed": "#f8dfbf",
+                    "surface-container-highest": "#e3e2e0",
+                    "on-surface": "#1a1c1a",
+                    "outline-variant": "#c3c8bd",
+                    "error-container": "#ffdad6",
+                    "primary": "#334f2b",
+                    "background": "#faf9f6",
+                    "on-primary": "#ffffff",
+                    "surface-container": "#efeeeb",
+                    "on-tertiary-container": "#d5ddd2",
+                    "outline": "#73796f",
+                    "on-secondary-fixed": "#261906",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#caecbc",
+                    "surface-container-high": "#e9e8e5",
+                    "secondary-container": "#f5dcbc",
+                    "surface-dim": "#dbdad7",
+                    "surface-variant": "#e3e2e0",
+                    "on-background": "#1a1c1a",
+                    "primary-container": "#4a6741",
+                    "on-secondary-container": "#726046",
+                    "on-tertiary-fixed": "#161d17",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#afd0a1",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#496640",
+                    "inverse-surface": "#2f312f",
+                    "surface": "#ffffff",
+                    "tertiary-fixed-dim": "#c1c9be",
+                    "on-tertiary-fixed-variant": "#414941",
+                    "on-secondary-fixed-variant": "#55442d",
+                    "on-primary-fixed": "#062104",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f2f1ee",
+                    "secondary-fixed-dim": "#dbc3a4",
+                    "inverse-primary": "#afd0a1",
+                    "on-primary-container": "#c2e4b4",
+                    "tertiary-fixed": "#dde5da",
+                    "secondary": "#6e5b43",
+                    "tertiary-container": "#5a625a"
+            },
+            "fontFamily": {
+                    "sans": ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      background-color: #ffffff;
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="text-[#333333] min-h-screen">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-md flex justify-between items-center px-4 h-14 border-b border-gray-100">
+<button class="text-gray-800 w-10 h-10 flex items-center justify-center -ml-2 rounded-full hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">arrow_back_ios_new</span>
+</button>
+<div class="flex items-center gap-3">
+<img alt="Author Avatar" class="w-8 h-8 rounded-full border border-gray-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8g3rXlAcpsi3MrlGvuEPNg8ggfy4hh_BOQicOU8kcZO-tAgKPsyrlfAhhSAindxwsecZa7x8FPFhyrkWBZGG53fdHk5x-l6Uar0hTcPDPsK7K4ZdI2J5fvqG0jltVaRWLdMgjJDWe8XnMU5l7vnV0bdxjFJrDPFe46lCkXoaDQJ2aV4JwLekinBmKeFSeCGkSYtDyBrkj_MFwTiZVk6v0OLpT_juED_9M9bfuQuiw4bxB2RiqkAf5EsSHhEspr6kFgUuZ37InxTvL"/>
+<span class="font-medium text-sm text-gray-800">Serenity 官方</span>
+</div>
+<button class="text-gray-800 w-10 h-10 flex items-center justify-center -mr-2 rounded-full hover:bg-gray-100 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'wght' 300;">more_horiz</span>
+</button>
+</header>
+<main class="pt-14 pb-4">
+<!-- Image Gallery -->
+<section class="w-full relative bg-gray-50 aspect-[3/4]">
+<img alt="Forest Path" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2t3vHlsDBQDmNtLGnCP4C65dJCJJn9SI3jt8FzwjE22gQ5viwFqLXuy5vmvZR0oKRSEeoiINf1hxk_IaCt4MM0Qw2iK6Rk2ZDklM-AMGJbL6ANjniowlVX4cg2WVtxUDAYcFRYYpFh5qnwTi9skeuBqSsQTfgH1PLsd8l6BzDBCJWwY7HtNOXZNZ0Qvj6mf2u9ZPRuHNGE1fRCFPj7qAvOdC2R2Ib8OhlW0Su_J-wN1xRlG_bmXXEbfOyMYMActkkS29-ex-OTnxi"/>
+<!-- Pagination Dots -->
+<div class="absolute bottom-4 left-0 w-full flex justify-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-white opacity-100"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-white opacity-50"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-white opacity-50"></div>
+</div>
+</section>
+<!-- Content Area -->
+<article class="px-4 pt-5 pb-6">
+<h1 class="text-xl font-bold leading-snug mb-3 text-gray-900">🌿 逃离都市计划 | 沉浸式森林呼吸疗愈</h1>
+<div class="text-[15px] leading-relaxed text-gray-700 space-y-4 mb-6">
+<p>远离城市律动，与大自然的宁静节奏同步 ✨。我们的森林呼吸疗愈旨在激活您的副交感神经系统，引导您进行一系列深度的吸气与呼气，让自己沉浸在古老林地的修复氛围中 🧘‍♀️。</p>
+<p><strong>✨ 体验亮点</strong></p>
+<p>🍃 <strong>芬多精吸入：</strong> 吸收树木散发的天然木质精油，科学证明可增强免疫功能并减轻压力。深呼吸，感受满级的负氧离子。</p>
+<p>🧘 <strong>正念冥想：</strong> 专业导师带您进行感官觉醒练习，将您的存在锚定在周围的环境中。放下烦恼，只关注当下的呼吸。</p>
+<p><strong>🚶‍♀️ 疗愈旅程</strong></p>
+<p>旅程从森林边缘开始，我们将放下所有电子设备 📵。慢步前行，感受脚下大地的触感，随着我们深入林荫，体会温度的微妙变化 🌤️。</p>
+<div class="rounded-xl overflow-hidden my-3">
+<img alt="Fern Detail" class="w-full aspect-[4/3] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9F49XKeEJ28wxS9_tATvI1LNe_3gM389fl1tTRGpjIWD5-vDr2dztfigKWg2Tf5wEMGQsbNLvBeWUS-sE12KkY_kt6zuEVSD8OuuorJkZ1RvBGZqglKKY3GkdeSAW5sq-nEGrIO9ZaEf7kcFTzQOlbyveS3Lkft2HqZBIoXXqXw7Sq_c4SBRvOPjBe8G6wkZGzKiylW5KNPs3xJxhUncfC-sgsd-NwlrUuydevIuxK_NfVQnspmhoaxSMX5SIdYe0594tXmTx6HnI"/>
+</div>
+<p>在幽静的冥想亭，您将通过特定的腹式呼吸技巧获得引导 🌬️。这种深层且节奏感的呼吸能鼓励身体进入深度放松状态，降低皮质醇水平并清除思绪压力。</p>
+<p>课程以一场修复性的草本茶会圆满结束 🍵，暖胃又暖心。</p>
+<p class="text-sm text-gray-500 mt-4">#周末去哪儿 #森林疗愈 #自然风光 #减压放松 #正念冥想 #健康生活方式</p>
+<p class="text-[12px] text-gray-400 mt-1">今天 10:24</p>
+</div>
+</article>
+</main>
+<!-- Bottom Action Bar -->
+</body></html>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>酒店详情</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-low": "#f4f3f1",
+                      "outline-variant": "#c3c8bd",
+                      "tertiary-fixed": "#dde5da",
+                      "surface-variant": "#e3e2e0",
+                      "secondary-fixed": "#f8dfbf",
+                      "on-tertiary-fixed": "#161d17",
+                      "on-secondary-fixed-variant": "#55442d",
+                      "surface-bright": "#faf9f6",
+                      "primary-fixed-dim": "#afd0a1",
+                      "outline": "#73796f",
+                      "on-primary-fixed-variant": "#324e2a",
+                      "on-primary-fixed": "#062104",
+                      "error-container": "#ffdad6",
+                      "surface-container-highest": "#e3e2e0",
+                      "secondary-fixed-dim": "#dbc3a4",
+                      "surface": "#faf9f6",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary": "#6e5b43",
+                      "on-tertiary-fixed-variant": "#414941",
+                      "on-background": "#1a1c1a",
+                      "inverse-primary": "#afd0a1",
+                      "secondary-container": "#f5dcbc",
+                      "on-secondary-container": "#726046",
+                      "surface-container-high": "#e9e8e5",
+                      "on-primary-container": "#c2e4b4",
+                      "on-error-container": "#93000a",
+                      "on-primary": "#ffffff",
+                      "primary": "#334f2b",
+                      "on-secondary-fixed": "#261906",
+                      "surface-dim": "#dbdad7",
+                      "on-surface": "#1a1c1a",
+                      "inverse-on-surface": "#f2f1ee",
+                      "primary-container": "#4a6741",
+                      "surface-tint": "#496640",
+                      "primary-fixed": "#caecbc",
+                      "on-tertiary-container": "#d5ddd2",
+                      "on-surface-variant": "#434840",
+                      "inverse-surface": "#2f312f",
+                      "tertiary": "#424a42",
+                      "on-error": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#c1c9be",
+                      "surface-container": "#efeeeb",
+                      "error": "#ba1a1a",
+                      "background": "#faf9f6",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#5a625a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-lg": "48px",
+                      "gutter": "16px",
+                      "unit": "4px",
+                      "stack-md": "24px",
+                      "margin-page": "24px",
+                      "stack-sm": "8px"
+              },
+              "fontFamily": {
+                      "headline-sm": [
+                              "Noto Serif"
+                      ],
+                      "body-lg": [
+                              "Manrope"
+                      ],
+                      "headline-lg": [
+                              "Noto Serif"
+                      ],
+                      "label-lg": [
+                              "Manrope"
+                      ],
+                      "headline-md": [
+                              "Noto Serif"
+                      ],
+                      "label-md": [
+                              "Manrope"
+                      ],
+                      "body-sm": [
+                              "Manrope"
+                      ],
+                      "body-md": [
+                              "Manrope"
+                      ]
+              },
+              "fontSize": {
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-lg": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.03em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "1.5",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for clean look */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface antialiased pb-28">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-900/80 backdrop-blur-md border-b border-stone-100 dark:border-stone-800 shadow-sm shadow-emerald-900/5 transition-opacity duration-300">
+<div class="flex justify-between items-center px-6 h-16 w-full">
+<!-- Back action implicitly replacing brand icon for a details page flow, but keeping JSON literal requirement for icon name -->
+<button class="text-emerald-800 dark:text-emerald-400 hover:opacity-80 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-emerald-800 dark:text-emerald-400 font-serif tracking-wide text-xl font-bold font-headline-sm">
+                泰康养老小镇
+            </h1>
+<button class="text-emerald-800 dark:text-emerald-400 hover:opacity-80 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">spa</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-16">
+<!-- Hero Carousel Placeholder (Single Image representation) -->
+<section class="relative w-full aspect-[4/3] md:aspect-video overflow-hidden">
+<img alt="Luxury resort room with natural light" class="w-full h-full object-cover" data-alt="Interior of a serene, high-end luxury resort suite with large windows overlooking a lush forest, warm natural sunlight, minimalist wooden furniture, crisp white linens, peaceful and airy atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcwh4qPQ-TiuGfnAiz9PsnlFg29Y5zSIE9y0KyBVdNNXD03ulOa300mfrrmjDAAxHB8lxmEtKwbVzvQju4rj0BCG-CxxAH02s9JsW1c4H0oO4XP2sM9WLC-zL2N_PMRkAte_aZbc919rN_9_2fJGxnoyANH9E8L9uu-ariU8Kz4OifHyqnDBH1zVC5ZuuAWImA_Z2hUTIJ8JjKBx019JIKYp4fQ9z6z3lLmdg-pCvveJa1tBc2JHqq0ust4wqsrHqKxsmErubhei1J"/>
+<!-- Pagination Dots Indicator -->
+<div class="absolute bottom-4 left-0 w-full flex justify-center gap-2">
+<div class="w-2 h-2 rounded-full bg-white opacity-100"></div>
+<div class="w-2 h-2 rounded-full bg-white/50"></div>
+<div class="w-2 h-2 rounded-full bg-white/50"></div>
+</div>
+</section>
+<!-- Core Information Card -->
+<section class="px-margin-page -mt-6 relative z-10">
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_10px_40px_rgba(51,79,43,0.05)] p-6 flex flex-col gap-stack-sm">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">林间静谧套房</h2>
+</div>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-headline-md text-headline-md text-primary">¥ 1,888</span>
+<span class="font-body-sm text-body-sm text-outline">/晚起</span>
+</div>
+<div class="flex flex-wrap gap-3 mt-4">
+<div class="flex items-center gap-1 bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-secondary">aspect_ratio</span>
+<span class="font-label-md text-label-md text-on-surface-variant">85 m²</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-secondary">bed</span>
+<span class="font-label-md text-label-md text-on-surface-variant">1张特大床 2.0m</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[16px] text-secondary">group</span>
+<span class="font-label-md text-label-md text-on-surface-variant">宜住 2人</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer -->
+<div class="h-stack-md"></div>
+<!-- Selling Points / Highlights -->
+<section class="px-margin-page py-stack-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-gutter">专属礼遇</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-tertiary-fixed/30 rounded-lg p-4 flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">hot_tub</span>
+<span class="font-label-lg text-label-lg text-on-surface">独立私汤入户</span>
+<span class="font-body-sm text-body-sm text-outline">引流天然富矿温泉水</span>
+</div>
+<div class="bg-tertiary-fixed/30 rounded-lg p-4 flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">local_florist</span>
+<span class="font-label-lg text-label-lg text-on-surface">森林景观露台</span>
+<span class="font-body-sm text-body-sm text-outline">270度环绕式自然绿意</span>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="px-margin-page py-stack-sm">
+<div class="h-[1px] w-full bg-outline-variant/30"></div>
+</div>
+<!-- Services & Facilities -->
+<section class="px-margin-page py-stack-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-gutter">设施与服务</h3>
+<div class="grid grid-cols-4 gap-y-6 gap-x-2">
+<div class="flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-secondary text-2xl">wifi</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">高速无线</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-secondary text-2xl">ac_unit</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">独立空调</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-secondary text-2xl">coffee_maker</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">胶囊咖啡</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-secondary text-2xl">dry_cleaning</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">洗衣服务</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-secondary text-2xl">room_service</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">客房送餐</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-secondary text-2xl">iron</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">熨衣设备</span>
+</div>
+<div class="flex flex-col items-center gap-2 text-center">
+<span class="material-symbols-outlined text-secondary text-2xl">bathtub</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">高端洗浴</span>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="px-margin-page py-stack-sm">
+<div class="h-[1px] w-full bg-outline-variant/30"></div>
+</div>
+<!-- Location & Contact -->
+<section class="px-margin-page py-stack-sm">
+<div class="flex items-center justify-between bg-surface-container-low rounded-lg p-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-surface font-medium">浙江省杭州市西湖区隐山路1号</span>
+<span class="font-body-sm text-body-sm text-outline">距离市区约30分钟车程</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center border-l border-outline-variant/30 pl-4 ml-2">
+<span class="material-symbols-outlined text-primary text-2xl mb-1">map</span>
+<span class="font-label-md text-label-md text-primary">地图</span>
+</div>
+</div>
+</section>
+<!-- Detail Images -->
+<section class="px-margin-page py-stack-md flex flex-col gap-gutter">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">图文详情</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                设计灵感源自周边原生山林，采用大量天然原木与原石材质。超大落地窗将室外四季景致引入室内，让您在私密空间中亦能感受自然的呼吸与心跳。
+            </p>
+<img alt="Room detail view" class="w-full rounded-lg object-cover" data-alt="Close-up of minimalist wooden interior details in a luxury hotel room, warm ambient lighting casting soft shadows, elegant and serene feeling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMTlsU_CTlLXYmLzsVXaTIw06mvhNgoQIQE6ip0ZqLv80nSQGXdA5RS1SOlz2QTgalk5KBvLUQGnJ6DBJLt0zJGKcLOTiLoSqhPB1OkNCMK2xFYa1BoVryw27QKk0OZSQ4PaGwCYpz03PgRUjrz6VDNFVAppC4CAGPI1V5uxeBk0u4GIqds6ykj6Ztjx7LCa2dOcTwe0V380aT4SpVA1I_7MD6sFT-EGRPM0gRLW5LUMng-wynP6sjhnsd8ZEwylTOOb5a5dKHjPVT"/>
+<img alt="Bathroom detail view" class="w-full rounded-lg object-cover" data-alt="Luxury spa bathroom with a deep soaking tub made of natural stone, adjacent to a large window revealing a bamboo garden, soft diffuse lighting, zen atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4djGYxfw6Z8IlJOkeYNqOrGtqQP30SgplP4U8UoTArBBwJXmd93tTIDsy4ODFgNrPrkqgD7NyeOiOLLQx2mBzxLNSW7VsDrzzOVZrmX9LpwSoh_uzYgKkUYscGzctYrTryp0G4FBOyWy9ikgLR6GdPJULpdNEENET5KxKVR-WHiwvGl6KOsCWAb9YnO1kiIv5mOM4JzU6zfLsby0HbE9NgJ4RFQCE7i84UaJy_ipChQJSZzF0h8UuXM2ElHoDHgWSx_KzIhsvYR6V"/>
+</section>
+</main>
+<!-- Fixed Bottom Action Bar (Transactional Page) -->
+<div class="fixed bottom-0 w-full bg-surface-container-lowest border-t border-surface-container-high px-margin-page py-4 pb-[calc(1rem+env(safe-area-inset-bottom))] z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.03)] flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-primary">¥ 1,888</span>
+<span class="font-label-md text-label-md text-outline">已选: 林间静谧套房</span>
+</div>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-label-lg text-label-lg shadow-sm shadow-primary/20 active:bg-primary-container active:text-on-primary-container transition-colors">
+            立即预订
+        </button>
+</div>
+</body></html>
