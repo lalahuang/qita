@@ -3,7 +3,7 @@
 <html class="light" lang="zh-CN"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>游玩预约 - 祺泰康养小镇</title>
+<title>游玩预约 - 祺祺泰康养小镇</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Noto+Serif:wght@400;500&amp;display=swap" rel="stylesheet"/>
@@ -122,7 +122,7 @@
 <!-- TopAppBar -->
 <header class="fixed top-0 w-full z-50 bg-stone-50/90 dark:bg-stone-900/90 backdrop-blur-md shadow-sm shadow-[#4A6741]/5 flex flex-col justify-center px-6 h-14">
 <div class="flex items-center justify-between w-full relative">
-<button aria-label="返回" class="text-[#4A6741] dark:text-[#a3b899] hover:opacity-80 transition-opacity flex items-center justify-center p-2 -ml-2">
+<button onclick="history.back()" aria-label="返回" class="text-[#4A6741] dark:text-[#a3b899] hover:opacity-80 transition-opacity flex items-center justify-center p-2 -ml-2">
 <span class="material-symbols-outlined text-[24px]">arrow_back_ios</span>
 </button>
 <h1 class="absolute left-1/2 -translate-x-1/2 text-[#4A6741] dark:text-[#a3b899] font-serif text-lg tracking-wide font-bold">疗养课程页</h1>
@@ -149,7 +149,7 @@
 <!-- Experience List -->
 <div class="space-y-stack-md">
 <!-- Card 1 -->
-<article class="group relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(74,103,65,0.08)] bg-surface-container-lowest border border-surface-variant/50 flex flex-col md:flex-row h-auto md:h-48 transition-transform duration-300 hover:scale-[1.01]">
+<article onclick="window.location.href='../课程详情/code.html'" class="cursor-pointer group relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(74,103,65,0.08)] bg-surface-container-lowest border border-surface-variant/50 flex flex-col md:flex-row h-auto md:h-48 transition-transform duration-300 hover:scale-[1.01]">
 <div class="w-full md:w-2/5 h-48 md:h-full relative overflow-hidden">
 <img alt="茂密的原始森林，阳光透过树冠洒下光斑" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="dense ancient forest with tall pine trees, sunbeams piercing through the green canopy, soft misty morning light, highly detailed nature photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq6pjvXmy-w1aFOqL2-Ns3-OezG2MQ4bS7H3Lu7PPLmUfeZgRlh5lcU4tYZbhIjXJU1gvPRkDfdkWFvfkCzfNsHJlMEJF7Q2l2MkuyWDW7x2OkYDyfOckthHauJdHbGsW3ialOuTN7LU4X6omU3QdLCW82IOkncFn7T1DPXNfYT9bTEkx-niD8H6pgTKL1hZCFkq6QwD9pkyMRHOdX_NznaaTr5805nCY39ReDzOMaIkE23oge-ZIjVObp4DtTPbJ7FKS4QMwybUZt"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-gradient-to-r"></div>
@@ -169,12 +169,12 @@
 </div>
 <div class="flex items-end justify-between mt-4">
 <div class="text-primary font-headline-sm text-headline-sm">¥199 <span class="font-body-sm text-body-sm text-outline font-normal">/人</span></div>
-<button class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg transition-colors shadow-sm">立即预约</button>
+<a href="../预约疗养/code.html" onclick="event.stopPropagation()" class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg transition-colors shadow-sm block text-center">立即预约</a>
 </div>
 </div>
 </article>
 <!-- Card 2 -->
-<article class="group relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(74,103,65,0.08)] bg-surface-container-lowest border border-surface-variant/50 flex flex-col md:flex-row h-auto md:h-48 transition-transform duration-300 hover:scale-[1.01]">
+<article onclick="window.location.href='../课程详情/code.html'" class="cursor-pointer group relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(74,103,65,0.08)] bg-surface-container-lowest border border-surface-variant/50 flex flex-col md:flex-row h-auto md:h-48 transition-transform duration-300 hover:scale-[1.01]">
 <div class="w-full md:w-2/5 h-48 md:h-full relative overflow-hidden">
 <img alt="繁星下的帐篷与篝火，温馨的露营氛围" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="luxury canvas glamping tent under a spectacular starry night sky, warm glowing campfire in the foreground, cozy evening atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-CmXijJKGVnxXiHIR4QUzQAnNTZbN2RFGEAoOJ0zA59Ox0-4IuMpNaZ-4f4PmAgtY-roaOqufoQG-tWVmLxWZI1XrqhTFWrjej3zmuM53AM_0HPLzmgiVVkD1pJgbVNYIQzXCQOBDBwqWskW75eQ87Dv_C25WzrW2aMRtliuMlsvvXNwYf6n45xdMoB3wDt8MyD9v6wKg6nljAC8jAEyXN9vDBCJZVgRNa_pWlImeskF-LBy4Z292vtrl5J3yLsKF6CAfkeyKK6hm"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-gradient-to-r"></div>
@@ -194,12 +194,12 @@
 </div>
 <div class="flex items-end justify-between mt-4">
 <div class="text-primary font-headline-sm text-headline-sm">¥599 <span class="font-body-sm text-body-sm text-outline font-normal">/位</span></div>
-<button class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg transition-colors shadow-sm">立即预约</button>
+<a href="../预约疗养/code.html" onclick="event.stopPropagation()" class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg transition-colors shadow-sm block text-center">立即预约</a>
 </div>
 </div>
 </article>
 <!-- Card 3 -->
-<article class="group relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(74,103,65,0.08)] bg-surface-container-lowest border border-surface-variant/50 flex flex-col md:flex-row h-auto md:h-48 transition-transform duration-300 hover:scale-[1.01]">
+<article onclick="window.location.href='../课程详情/code.html'" class="cursor-pointer group relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(74,103,65,0.08)] bg-surface-container-lowest border border-surface-variant/50 flex flex-col md:flex-row h-auto md:h-48 transition-transform duration-300 hover:scale-[1.01]">
 <div class="w-full md:w-2/5 h-48 md:h-full relative overflow-hidden">
 <img alt="清晨阳光下的草地，瑜伽练习场景" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="woman practicing yoga on a lush green lawn during early morning sunrise, soft golden hour lighting, tranquil resort setting, dew on grass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASVJ_BEO585I8fPEJiis-OpT-fT1blNDHwd545qtmpCpxwv2D5xXV_pw8ucctgQRKqZ0TcFoTZFOcDze5z3iRfycVlbq66IRO5Zsk01PYiHUM4P4fk9c4T3KBmS5DXj20aOmQ_1yeTYT-ynbnuIhbyPbylkl5i0HDAnmjZLOOk05TbCFMDPPQ3RjnulZbknExVWZ0EOEeugJW4OaSS6Odvcirna149JSV_8KUcCht6e4_hRco0ga2J72J7Hu0WXswIechtkkuVDYVQ"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-gradient-to-r"></div>
@@ -219,12 +219,12 @@
 </div>
 <div class="flex items-end justify-between mt-4">
 <div class="text-primary font-headline-sm text-headline-sm">¥99 <span class="font-body-sm text-body-sm text-outline font-normal">/人</span></div>
-<button class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg transition-colors shadow-sm">立即预约</button>
+<a href="../预约疗养/code.html" onclick="event.stopPropagation()" class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg transition-colors shadow-sm block text-center">立即预约</a>
 </div>
 </div>
 </article>
 <!-- Card 4 -->
-<article class="group relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(74,103,65,0.08)] bg-surface-container-lowest border border-surface-variant/50 flex flex-col md:flex-row h-auto md:h-48 transition-transform duration-300 hover:scale-[1.01]">
+<article onclick="window.location.href='../课程详情/code.html'" class="cursor-pointer group relative rounded-xl overflow-hidden shadow-[0_8px_30px_rgba(74,103,65,0.08)] bg-surface-container-lowest border border-surface-variant/50 flex flex-col md:flex-row h-auto md:h-48 transition-transform duration-300 hover:scale-[1.01]">
 <div class="w-full md:w-2/5 h-48 md:h-full relative overflow-hidden">
 <img alt="蜿蜒的山间古道，适合骑行探索" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="winding narrow stone path through lush green hills and mountains, cycling trail, bright afternoon light, dynamic outdoor scenery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcjv07Iiy1ed6V_FzJUuX2l6N0hk927BfoR9D1GfUk38xkiyqr7BYJ9Pfpg-XYFBp0eElmw2r0G0zMHeKbHDOuISntdLqHhmUdOxcM3keA4kRFWKAmj8x9hu6nCXipYRZFJKE34eQlTJ5MFXup8xVC0bhqelRNFuiLGbsrNcF_dw7s3gQXnLdWUfiQFllySz97d2J3Qrm3FP7PEjDUOrs-6ozVnImAKYCFg5_4tkJCTYJvNB8BcolJbaSa2p7Oj1RjMlFFfnBpHDwt"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent md:bg-gradient-to-r"></div>
@@ -244,29 +244,11 @@
 </div>
 <div class="flex items-end justify-between mt-4">
 <div class="text-primary font-headline-sm text-headline-sm">¥299 <span class="font-body-sm text-body-sm text-outline font-normal">/人</span></div>
-<button class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg transition-colors shadow-sm">立即预约</button>
+<a href="../预约疗养/code.html" onclick="event.stopPropagation()" class="bg-primary hover:bg-primary/90 text-on-primary px-6 py-2 rounded-lg font-label-lg text-label-lg transition-colors shadow-sm block text-center">立即预约</a>
 </div>
 </div>
 </article>
 </div>
 </main>
-<!-- BottomNavBar -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pt-2 pb-safe bg-stone-50 dark:bg-stone-950 rounded-t-2xl md:hidden" style="box-shadow: 0 -4px 20px rgba(74,103,65,0.05);">
-<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-[#4A6741] transition-colors py-2 min-w-[64px]">
-<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">home</span>
-<span class="font-serif text-[11px] font-medium">首页</span>
-</button>
-<button class="flex flex-col items-center justify-center text-[#4A6741] dark:text-[#a3b899] font-bold scale-110 transition-transform duration-300 py-2 min-w-[64px]">
-<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">event_available</span>
-<span class="font-serif text-[11px] font-medium">预约</span>
-</button>
-<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-[#4A6741] transition-colors py-2 min-w-[64px]">
-<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">auto_awesome</span>
-<span class="font-serif text-[11px] font-medium">动态</span>
-</button>
-<button class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:text-[#4A6741] transition-colors py-2 min-w-[64px]">
-<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
-<span class="font-serif text-[11px] font-medium">我的</span>
-</button>
-</nav>
+
 </body></html>
